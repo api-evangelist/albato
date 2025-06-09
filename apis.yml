@@ -33,3 +33,73 @@ common:
   - name: Roadmap
     url: https://roadmap.albato.com/public
     type: Roadmap
+  - name: Service rates for automation | Albato
+    description: 'null'
+    url: https://albato.com/pricing
+    type: Pricing
+  - name: Albato Embedded Pricing
+    description: 'null'
+    url: https://albato.com/embedded/pricing
+    type: Pricing
+  - name: Blog Albato.com | A single platform for all automations
+    description: 'null'
+    url: >-
+      https://albato.com/blog/all?_gl=1*50d435*_gcl_au*MjExNjQxNjAyOS4xNzQ5NTA1NDkw
+    type: Blog
+  - name: Albato Help Center
+    description: 'null'
+    url: https://wiki.albato.com/en
+    type: Support
+  - name: FAQ | Albato Help Center
+    description: 'null'
+    url: https://wiki.albato.com/en/collections/8343168-faq
+    type: FAQ
+  - name: Affiliate Program | Albato Help Center
+    description: 'null'
+    url: https://wiki.albato.com/en/collections/8343731-affiliate-program
+    type: Affiliate
+  - name: Blog Albato.com | A single platform for all automations
+    description: 'null'
+    url: >-
+      https://albato.com/blog/all?_gl=1*50d435*_gcl_au*MjExNjQxNjAyOS4xNzQ5NTA1NDkw
+    type: ' Articles'
+  - name: Case Studies - Albato.com | A single platform for all automations
+    description: 'null'
+    url: https://albato.com/blog/case-studies
+    type: CaseStudies
+  - name: Guides - Albato.com | A single platform for all automations
+    description: 'null'
+    url: https://albato.com/blog/guides
+    type: Guide
+  - name: Albato
+    description: 'null'
+    url: https://albato.com/app/user/auth/login?lang=en
+    type: Login
+  - name: Albato
+    description: 'null'
+    url: https://albato.com/app/user/signup?redirectTo=
+    type: SignUp
+  - name: Albato  a single no-code platform for all automations
+    description: 'null'
+    url: https://albato.com/
+    type: Website
+  - name: Albato Embedded Integration Platform for SaaS
+    description: 'null'
+    url: https://albato.com/embedded
+    type: Security
+  - name: Albato Embedded Integration Platform for SaaS
+    description: 'null'
+    url: https://albato.com/embedded
+    type: Compliance
+  - name: Explore 320,000+ Integrations | Connect Your Apps | Albato
+    description: 'null'
+    url: https://albato.com/apps/all-integrations
+    type: Integrations
+  - name: License
+    description: 'null'
+    url: https://albato.com/license
+    type: Licensing
+  - name: Privacy
+    description: 'null'
+    url: https://albato.com/privacy
+    type: PrivacyPolicy
