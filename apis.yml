@@ -30,3 +30,6 @@ common:
   - name: Facebook Group
     url: https://www.facebook.com/groups/albatocommunity
     type: FacebookGroup
+  - name: Roadmap
+    url: https://roadmap.albato.com/public
+    type: Roadmap
