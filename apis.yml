@@ -15,6 +15,7 @@ name: Albato
 tags:
   - Embedded SaaS Integration
   - Integrations
+  - Embedded SaaS
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
@@ -72,7 +73,7 @@ common:
     type: SignUp
     description: 'null'
   - url: https://albato.com/
-    name: Albato a single no-code platform for all automations
+    name: Albato  a single no-code platform for all automations
     type: Website
     description: 'null'
   - url: https://albato.com/embedded
@@ -84,8 +85,6 @@ common:
     type: Compliance
     description: 'null'
   - url: https://albato.com/apps/all-integrations
-    name: Explore 320,000+ Integrations
-    type: Integrations
     data:
       - name: A&A/FITPASS Calltracking
       - name: Acadle
@@ -290,7 +289,7 @@ common:
       - name: Facebook
       - name: Facebook Conversions API
       - name: Facebook Pages
-      - name: Facilita Móvel
+      - name: Facilita Mvel
       - name: FalconSender
       - name: Fast Track
       - name: Fiken.no
@@ -896,6 +895,8 @@ common:
       - name: Zoho Meeting
       - name: Zoho People
       - name: Zoom
+    name: Explore 320,000+ Integrations
+    type: Integrations
   - url: https://albato.com/license
     name: License
     type: Licensing
@@ -904,9 +905,7 @@ common:
     name: Privacy
     type: PrivacyPolicy
     description: 'null'
-  - name: Features
-    type: Features
-    data:
+  - data:
       - name: App Integration
       - name: No-Code
       - name: Automation update time
@@ -940,8 +939,10 @@ common:
       - name: Dashboard with usage insights
       - name: Custom webhooks
       - name: White Label Integrations
+    name: Features
+    type: Features
 created: '2025-06-06T00:00:00.000Z'
-modified: '2025-06-09'
+modified: '2026-01-02'
 position: Consumer
 description: 'Automate your workflow by integrating the apps you use every day. '
 maintainers:
