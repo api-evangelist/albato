@@ -13,7 +13,6 @@ apis:
     description: 'Automate your workflow by integrating the apps you use every day. '
 name: Albato
 tags:
-  - Embedded SaaS Integration
   - Integrations
   - Embedded SaaS
 type: Index
