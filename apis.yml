@@ -72,7 +72,7 @@ common:
     type: SignUp
     description: 'null'
   - url: https://albato.com/
-    name: Albato  a single no-code platform for all automations
+    name: Albato a single no-code platform for all automations
     type: Website
     description: 'null'
   - url: https://albato.com/embedded
@@ -290,7 +290,7 @@ common:
       - name: Facebook
       - name: Facebook Conversions API
       - name: Facebook Pages
-      - name: Facilita Móvel
+      - name: Facilita MÃ³vel
       - name: FalconSender
       - name: Fast Track
       - name: Fiken.no
