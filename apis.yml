@@ -941,7 +941,7 @@ common:
     name: Features
     type: Features
 created: '2025-06-06T00:00:00.000Z'
-modified: '2026-01-02'
+modified: '2026-03-16'
 position: Consumer
 segments:
   - Embedded_iPaaS
@@ -949,5 +949,5 @@ segments:
 description: 'Automate your workflow by integrating the apps you use every day. '
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
 specificationVersion: '0.19'
