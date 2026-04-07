@@ -4,8 +4,7 @@ url: >-
 apis:
   - aid: albato:albato
     name: Albato
-    tags:
-      - API
+    tags: []
     humanURL: ' https://albato.com/'
     properties:
       - url: ' https://albato.com/'
@@ -14,8 +13,8 @@ apis:
       Automate your workflow by integrating the apps you use every day.
 name: Albato
 tags:
-  - Integrations
   - Embedded iPaaS
+  - Integrations
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
