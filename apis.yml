@@ -10,7 +10,8 @@ apis:
     properties:
       - url: ' https://albato.com/'
         type: Documentation
-    description: 'Automate your workflow by integrating the apps you use every day. '
+    description: >-
+      Automate your workflow by integrating the apps you use every day.
 name: Albato
 tags:
   - Integrations
@@ -946,7 +947,8 @@ position: Consumer
 segments:
   - Embedded_iPaaS
   - Workflows
-description: 'Automate your workflow by integrating the apps you use every day. '
+description: >-
+  Automate your workflow by integrating the apps you use every day.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
