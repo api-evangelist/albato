@@ -1,0 +1,269 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Albato
+  description: >-
+    Unified taxonomy for the Albato no-code iPaaS platform covering automation
+    workflows, embedded integration management, app connectors, and execution
+    monitoring.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: albato-automations
+      version: "v1"
+      baseUrl: "https://albato.com/api/v1"
+      status: active
+      description: Automation workflow management
+    - namespace: albato-embedded
+      version: "v1"
+      baseUrl: "https://albato.com/api/v1/embedded"
+      status: active
+      description: Embedded iPaaS team and connector management
+
+  resources:
+    - name: automations
+      apis:
+        - albato-automations
+      actions:
+        - get
+        - list
+        - create
+        - update
+        - delete
+        - enable
+        - disable
+      description: Multi-step automation workflows
+    - name: executions
+      apis:
+        - albato-automations
+      actions:
+        - list
+      description: Automation execution history
+    - name: teams
+      apis:
+        - albato-embedded
+      actions:
+        - get
+        - list
+        - create
+        - update
+        - delete
+      description: Embedded customer teams
+    - name: users
+      apis:
+        - albato-embedded
+      actions:
+        - get
+        - list
+        - create
+      description: Team users
+    - name: connectors
+      apis:
+        - albato-embedded
+      actions:
+        - list
+      description: Available app connectors
+    - name: templates
+      apis:
+        - albato-embedded
+      actions:
+        - list
+        - create
+      description: Automation templates
+
+  actions:
+    - name: get
+      httpMethods:
+        - GET
+      pattern: read
+      description: Retrieve a single resource
+    - name: list
+      httpMethods:
+        - GET
+      pattern: read
+      description: List resources
+    - name: create
+      httpMethods:
+        - POST
+      pattern: write
+      description: Create a resource
+    - name: update
+      httpMethods:
+        - PUT
+      pattern: write
+      description: Update a resource
+    - name: delete
+      httpMethods:
+        - DELETE
+      pattern: destructive
+      description: Delete a resource
+    - name: enable
+      httpMethods:
+        - POST
+      pattern: write
+      description: Activate an automation
+    - name: disable
+      httpMethods:
+        - POST
+      pattern: write
+      description: Deactivate an automation
+
+  schemas:
+    automations:
+      - name: Automation
+        description: A multi-step automation workflow
+        keyProperties:
+          - id
+          - name
+          - status
+          - steps
+      - name: AutomationStep
+        description: A single step in an automation
+        keyProperties:
+          - app
+          - type
+          - event
+      - name: Execution
+        description: An automation execution record
+        keyProperties:
+          - id
+          - automation_id
+          - status
+    embedded:
+      - name: Team
+        description: An embedded customer team
+        keyProperties:
+          - id
+          - name
+          - external_id
+          - plan
+      - name: User
+        description: A user within an embedded team
+        keyProperties:
+          - id
+          - email
+          - role
+      - name: Connector
+        description: An available app connector
+        keyProperties:
+          - id
+          - name
+          - category
+      - name: Template
+        description: An automation template
+        keyProperties:
+          - id
+          - name
+          - category
+
+  enums:
+    automationStatuses:
+      - active
+      - inactive
+    stepTypes:
+      - trigger
+      - action
+      - condition
+      - delay
+    executionStatuses:
+      - success
+      - error
+      - running
+    userRoles:
+      - admin
+      - member
+    authTypes:
+      - api_key
+      - oauth2
+      - basic
+      - session
+      - custom
+
+  authentication:
+    schemes:
+      - name: ApiKeyAuth
+        description: API key in Authorization header
+        apis:
+          - albato-automations
+          - albato-embedded
+
+capability:
+  workflows:
+    - name: iPaaS Automation
+      file: capabilities/ipaas-automation.yaml
+      description: Manage no-code automations and embedded iPaaS customer teams
+      apisCombined:
+        - albato-automations
+        - albato-embedded
+      toolCount: 6
+      personas:
+        - Automation Builder
+        - SaaS Developer
+        - Operations Manager
+
+  personas:
+    - id: automation-builder
+      name: Automation Builder
+      description: >-
+        Creates no-code automation workflows in Albato connecting apps without
+        writing code, configuring triggers, actions, conditions, and delays.
+      workflows:
+        - iPaaS Automation
+    - id: saas-developer
+      name: SaaS Developer
+      description: >-
+        Integrates Albato Embedded iPaaS into SaaS products to offer white-label
+        automation capabilities to customers. Manages teams and connectors.
+      workflows:
+        - iPaaS Automation
+    - id: operations-manager
+      name: Operations Manager
+      description: >-
+        Monitors automation health, reviews execution rates and errors, and
+        ensures business processes run reliably across integrated apps.
+      workflows:
+        - iPaaS Automation
+
+  domains:
+    - name: Workflow Automation
+      description: Create and monitor automation workflows
+      resources:
+        - automations
+        - executions
+    - name: Embedded Integration
+      description: Manage embedded iPaaS customer accounts
+      resources:
+        - teams
+        - users
+        - connectors
+        - templates
+
+crossReference:
+  - resource: automations
+    operations:
+      - list-automations
+      - get-automation
+      - create-automation
+    workflows:
+      - iPaaS Automation
+    personas:
+      - Automation Builder
+      - Operations Manager
+  - resource: teams
+    operations:
+      - list-teams
+      - create-team
+    workflows:
+      - iPaaS Automation
+    personas:
+      - SaaS Developer
+  - resource: connectors
+    operations:
+      - list-connectors
+    workflows:
+      - iPaaS Automation
+    personas:
+      - SaaS Developer
+      - Automation Builder

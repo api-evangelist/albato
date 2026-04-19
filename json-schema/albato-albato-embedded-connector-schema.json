@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato/refs/heads/main/json-schema/albato-albato-embedded-connector-schema.json",
+  "title": "Connector",
+  "description": "An available app connector for embedded integrations",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "triggers_count": {
+      "type": "integer"
+    },
+    "actions_count": {
+      "type": "integer"
+    },
+    "icon_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

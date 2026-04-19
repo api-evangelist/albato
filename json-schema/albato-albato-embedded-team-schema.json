@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato/refs/heads/main/json-schema/albato-albato-embedded-team-schema.json",
+  "title": "Team",
+  "description": "An embedded team representing a customer account",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "external_id": {
+      "type": "string"
+    },
+    "plan": {
+      "type": "string"
+    },
+    "active_automations": {
+      "type": "integer"
+    },
+    "transaction_count": {
+      "type": "integer"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato/refs/heads/main/json-schema/albato-albato-automations-automation-schema.json",
+  "title": "Automation",
+  "description": "A multi-step automation workflow",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "Automation display name"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "description": "active or inactive"
+    },
+    "trigger_count": {
+      "type": "integer"
+    },
+    "success_count": {
+      "type": "integer"
+    },
+    "error_count": {
+      "type": "integer"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

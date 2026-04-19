@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato/refs/heads/main/json-structure/albato-albato-embedded-user-structure.json",
+  "title": "User",
+  "description": "A user within an embedded team",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": ""
+    },
+    "email": {
+      "type": "string",
+      "description": ""
+    },
+    "name": {
+      "type": "string",
+      "description": ""
+    },
+    "role": {
+      "type": "string",
+      "description": ""
+    },
+    "team_id": {
+      "type": "string",
+      "description": ""
+    },
+    "created_at": {
+      "type": "datetime",
+      "description": ""
+    }
+  }
+}

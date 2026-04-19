@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/albato/refs/heads/main/json-structure/albato-albato-automations-automation-step-structure.json",
+  "title": "AutomationStep",
+  "description": "A step in an automation workflow",
+  "type": "object",
+  "properties": {
+    "app": {
+      "type": "string",
+      "description": "App identifier"
+    },
+    "type": {
+      "type": "string",
+      "description": "trigger, action, condition, or delay"
+    },
+    "event": {
+      "type": "string",
+      "description": "Event name"
+    },
+    "config": {
+      "type": "object",
+      "description": ""
+    }
+  }
+}

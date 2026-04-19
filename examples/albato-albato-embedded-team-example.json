@@ -1,0 +1,9 @@
+{
+  "id": "abc123",
+  "name": "Sample Name",
+  "external_id": "abc123",
+  "plan": "growth",
+  "active_automations": 10,
+  "transaction_count": 42,
+  "created_at": "2026-04-19T12:00:00Z"
+}

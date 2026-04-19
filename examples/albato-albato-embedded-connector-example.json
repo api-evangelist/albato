@@ -1,0 +1,9 @@
+{
+  "id": "abc123",
+  "name": "Sample Name",
+  "category": "hubspot",
+  "description": "A description",
+  "triggers_count": 42,
+  "actions_count": 42,
+  "icon_url": "https://albato.com/icon/hubspot.png"
+}
