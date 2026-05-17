@@ -132,7 +132,7 @@ common:
   - url: https://www.facebook.com/groups/albatocommunity
     type: FacebookGroup
   - url: https://roadmap.albato.com/public
-    type: Roadmap
+    type: RoadMap
   - url: rules/albato-spectral-rules.yml
     type: SpectralRules
   - url: vocabulary/albato-vocabulary.yaml
