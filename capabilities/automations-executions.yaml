@@ -1,0 +1,92 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Albato Automations API — Executions
+  description: 'Albato Automations API — Executions. 1 operations. Lead operation: List executions. Self-contained Naftiko
+    capability covering one Albato business surface.'
+  tags:
+  - Albato
+  - Executions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ALBATO_API_KEY: ALBATO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: automations-executions
+    baseUri: https://albato.com/api/v1
+    description: Albato Automations API — Executions business capability. Self-contained, no shared references.
+    resources:
+    - name: automations-id-executions
+      path: /automations/{id}/executions
+      operations:
+      - name: listexecutions
+        method: GET
+        description: List executions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          description: Automation ID
+          required: true
+        - name: status
+          in: query
+          type: string
+        - name: limit
+          in: query
+          type: integer
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.ALBATO_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: automations-executions-rest
+    port: 8080
+    description: REST adapter for Albato Automations API — Executions. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/automations/{id}/executions
+      name: automations-id-executions
+      description: REST surface for automations-id-executions.
+      operations:
+      - method: GET
+        name: listexecutions
+        description: List executions
+        call: automations-executions.listexecutions
+        with:
+          id: rest.id
+          status: rest.status
+          limit: rest.limit
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: automations-executions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Albato Automations API — Executions. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-executions
+      description: List executions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: automations-executions.listexecutions
+      with:
+        id: tools.id
+        status: tools.status
+        limit: tools.limit
+      outputParameters:
+      - type: object
+        mapping: $.

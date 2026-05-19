@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Albato Embedded API — Connectors
+  description: 'Albato Embedded API — Connectors. 1 operations. Lead operation: List connectors. Self-contained Naftiko capability
+    covering one Albato business surface.'
+  tags:
+  - Albato
+  - Connectors
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ALBATO_API_KEY: ALBATO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: embedded-connectors
+    baseUri: https://albato.com/api/v1/embedded
+    description: Albato Embedded API — Connectors business capability. Self-contained, no shared references.
+    resources:
+    - name: connectors
+      path: /connectors
+      operations:
+      - name: listconnectors
+        method: GET
+        description: List connectors
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: search
+          in: query
+          type: string
+          description: Search by connector name
+        - name: limit
+          in: query
+          type: integer
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.ALBATO_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: embedded-connectors-rest
+    port: 8080
+    description: REST adapter for Albato Embedded API — Connectors. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/connectors
+      name: connectors
+      description: REST surface for connectors.
+      operations:
+      - method: GET
+        name: listconnectors
+        description: List connectors
+        call: embedded-connectors.listconnectors
+        with:
+          search: rest.search
+          limit: rest.limit
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: embedded-connectors-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Albato Embedded API — Connectors. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-connectors
+      description: List connectors
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: embedded-connectors.listconnectors
+      with:
+        search: tools.search
+        limit: tools.limit
+      outputParameters:
+      - type: object
+        mapping: $.

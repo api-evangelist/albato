@@ -1,0 +1,123 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Albato Embedded API — Users
+  description: 'Albato Embedded API — Users. 2 operations. Lead operation: List team users. Self-contained Naftiko capability
+    covering one Albato business surface.'
+  tags:
+  - Albato
+  - Users
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ALBATO_API_KEY: ALBATO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: embedded-users
+    baseUri: https://albato.com/api/v1/embedded
+    description: Albato Embedded API — Users business capability. Self-contained, no shared references.
+    resources:
+    - name: teams-teamId-users
+      path: /teams/{teamId}/users
+      operations:
+      - name: listteamusers
+        method: GET
+        description: List team users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: teamId
+          in: path
+          type: string
+          description: Team ID
+          required: true
+      - name: createteamuser
+        method: POST
+        description: Create a team user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: teamId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.ALBATO_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: embedded-users-rest
+    port: 8080
+    description: REST adapter for Albato Embedded API — Users. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/teams/{teamid}/users
+      name: teams-teamid-users
+      description: REST surface for teams-teamId-users.
+      operations:
+      - method: GET
+        name: listteamusers
+        description: List team users
+        call: embedded-users.listteamusers
+        with:
+          teamId: rest.teamId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createteamuser
+        description: Create a team user
+        call: embedded-users.createteamuser
+        with:
+          teamId: rest.teamId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: embedded-users-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Albato Embedded API — Users. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-team-users
+      description: List team users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: embedded-users.listteamusers
+      with:
+        teamId: tools.teamId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-team-user
+      description: Create a team user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: embedded-users.createteamuser
+      with:
+        teamId: tools.teamId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

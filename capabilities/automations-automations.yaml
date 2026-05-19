@@ -1,0 +1,325 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Albato Automations API — Automations
+  description: 'Albato Automations API — Automations. 7 operations. Lead operation: List automations. Self-contained Naftiko
+    capability covering one Albato business surface.'
+  tags:
+  - Albato
+  - Automations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ALBATO_API_KEY: ALBATO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: automations-automations
+    baseUri: https://albato.com/api/v1
+    description: Albato Automations API — Automations business capability. Self-contained, no shared references.
+    resources:
+    - name: automations
+      path: /automations
+      operations:
+      - name: listautomations
+        method: GET
+        description: List automations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: status
+          in: query
+          type: string
+          description: Filter by status
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+      - name: createautomation
+        method: POST
+        description: Create an automation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: automations-id
+      path: /automations/{id}
+      operations:
+      - name: getautomation
+        method: GET
+        description: Get an automation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          description: Automation ID
+          required: true
+      - name: updateautomation
+        method: PUT
+        description: Update an automation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteautomation
+        method: DELETE
+        description: Delete an automation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    - name: automations-id-disable
+      path: /automations/{id}/disable
+      operations:
+      - name: disableautomation
+        method: POST
+        description: Disable an automation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    - name: automations-id-enable
+      path: /automations/{id}/enable
+      operations:
+      - name: enableautomation
+        method: POST
+        description: Enable an automation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.ALBATO_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: automations-automations-rest
+    port: 8080
+    description: REST adapter for Albato Automations API — Automations. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/automations
+      name: automations
+      description: REST surface for automations.
+      operations:
+      - method: GET
+        name: listautomations
+        description: List automations
+        call: automations-automations.listautomations
+        with:
+          status: rest.status
+          limit: rest.limit
+          offset: rest.offset
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createautomation
+        description: Create an automation
+        call: automations-automations.createautomation
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/automations/{id}
+      name: automations-id
+      description: REST surface for automations-id.
+      operations:
+      - method: GET
+        name: getautomation
+        description: Get an automation
+        call: automations-automations.getautomation
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateautomation
+        description: Update an automation
+        call: automations-automations.updateautomation
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteautomation
+        description: Delete an automation
+        call: automations-automations.deleteautomation
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/automations/{id}/disable
+      name: automations-id-disable
+      description: REST surface for automations-id-disable.
+      operations:
+      - method: POST
+        name: disableautomation
+        description: Disable an automation
+        call: automations-automations.disableautomation
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/automations/{id}/enable
+      name: automations-id-enable
+      description: REST surface for automations-id-enable.
+      operations:
+      - method: POST
+        name: enableautomation
+        description: Enable an automation
+        call: automations-automations.enableautomation
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: automations-automations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Albato Automations API — Automations. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-automations
+      description: List automations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: automations-automations.listautomations
+      with:
+        status: tools.status
+        limit: tools.limit
+        offset: tools.offset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-automation
+      description: Create an automation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: automations-automations.createautomation
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-automation
+      description: Get an automation
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: automations-automations.getautomation
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-automation
+      description: Update an automation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: automations-automations.updateautomation
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-automation
+      description: Delete an automation
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: automations-automations.deleteautomation
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disable-automation
+      description: Disable an automation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: automations-automations.disableautomation
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enable-automation
+      description: Enable an automation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: automations-automations.enableautomation
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.

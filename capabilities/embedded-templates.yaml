@@ -1,0 +1,115 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Albato Embedded API — Templates
+  description: 'Albato Embedded API — Templates. 2 operations. Lead operation: List templates. Self-contained Naftiko capability
+    covering one Albato business surface.'
+  tags:
+  - Albato
+  - Templates
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ALBATO_API_KEY: ALBATO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: embedded-templates
+    baseUri: https://albato.com/api/v1/embedded
+    description: Albato Embedded API — Templates business capability. Self-contained, no shared references.
+    resources:
+    - name: templates
+      path: /templates
+      operations:
+      - name: listtemplates
+        method: GET
+        description: List templates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+      - name: createtemplate
+        method: POST
+        description: Create a template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.ALBATO_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: embedded-templates-rest
+    port: 8080
+    description: REST adapter for Albato Embedded API — Templates. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/templates
+      name: templates
+      description: REST surface for templates.
+      operations:
+      - method: GET
+        name: listtemplates
+        description: List templates
+        call: embedded-templates.listtemplates
+        with:
+          limit: rest.limit
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createtemplate
+        description: Create a template
+        call: embedded-templates.createtemplate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: embedded-templates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Albato Embedded API — Templates. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-templates
+      description: List templates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: embedded-templates.listtemplates
+      with:
+        limit: tools.limit
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-template
+      description: Create a template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: embedded-templates.createtemplate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

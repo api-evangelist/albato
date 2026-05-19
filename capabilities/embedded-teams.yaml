@@ -1,0 +1,237 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Albato Embedded API — Teams
+  description: 'Albato Embedded API — Teams. 5 operations. Lead operation: List teams. Self-contained Naftiko capability covering
+    one Albato business surface.'
+  tags:
+  - Albato
+  - Teams
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ALBATO_API_KEY: ALBATO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: embedded-teams
+    baseUri: https://albato.com/api/v1/embedded
+    description: Albato Embedded API — Teams business capability. Self-contained, no shared references.
+    resources:
+    - name: teams
+      path: /teams
+      operations:
+      - name: listteams
+        method: GET
+        description: List teams
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+      - name: createteam
+        method: POST
+        description: Create a team
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: teams-id
+      path: /teams/{id}
+      operations:
+      - name: getteam
+        method: GET
+        description: Get a team
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          description: Team ID
+          required: true
+      - name: updateteam
+        method: PUT
+        description: Update a team
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteteam
+        method: DELETE
+        description: Delete a team
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.ALBATO_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: embedded-teams-rest
+    port: 8080
+    description: REST adapter for Albato Embedded API — Teams. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/teams
+      name: teams
+      description: REST surface for teams.
+      operations:
+      - method: GET
+        name: listteams
+        description: List teams
+        call: embedded-teams.listteams
+        with:
+          limit: rest.limit
+          offset: rest.offset
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createteam
+        description: Create a team
+        call: embedded-teams.createteam
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/teams/{id}
+      name: teams-id
+      description: REST surface for teams-id.
+      operations:
+      - method: GET
+        name: getteam
+        description: Get a team
+        call: embedded-teams.getteam
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateteam
+        description: Update a team
+        call: embedded-teams.updateteam
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteteam
+        description: Delete a team
+        call: embedded-teams.deleteteam
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: embedded-teams-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Albato Embedded API — Teams. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-teams
+      description: List teams
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: embedded-teams.listteams
+      with:
+        limit: tools.limit
+        offset: tools.offset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-team
+      description: Create a team
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: embedded-teams.createteam
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-team
+      description: Get a team
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: embedded-teams.getteam
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-team
+      description: Update a team
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: embedded-teams.updateteam
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-team
+      description: Delete a team
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: embedded-teams.deleteteam
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
