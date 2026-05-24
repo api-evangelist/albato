@@ -204,6 +204,8 @@ common:
     description: Workspace integration for task and project data synchronization.
   - name: Airtable
     description: Database integration for spreadsheet and grid data workflows.
+- type: LLMsTxt
+  url: https://albato.com/llms.txt
 integrations:
 - name: Integrate undefined with ActiveCampaign
 - name: Integrate undefined with AliExpress
