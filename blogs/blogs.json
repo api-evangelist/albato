@@ -3,12 +3,12 @@
   "feeds": [
     {
       "source": "https://albato.com/blog/all",
-      "feed_url": "https://albato.com/blog/all",
-      "title": "",
+      "feed_url": "",
       "saved": 0,
-      "method": "none"
+      "method": "agent-scrape"
     }
   ],
-  "post_count": 2,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 9,
+  "fetched": "2026-06-27T12:21:19Z",
+  "agent_pulled": "2026-06-27"
 }
