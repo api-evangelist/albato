@@ -106,6 +106,12 @@ apis:
   description: REST API for Albato Embedded iPaaS enabling SaaS companies to manage customer teams, app connectors, and automation
     templates for white-label integration delivery.
 common:
+- type: TrustCenter
+  url: security/albato-trust-center.yml
+- type: DomainSecurity
+  url: security/albato-domain-security.yml
+- type: Authentication
+  url: authentication/albato-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/albato
 - url: https://albato.com
