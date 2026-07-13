@@ -1,219 +1,272 @@
+# albato — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - servers-expected-domain: 2/2 servers on albato.com
+#   - path-params-casing: snake @ 82% (n=11)
+#   - query-params-casing: snake @ 100% (n=10)
+#   - operationid-casing: camel @ 100% (n=18)
+#   - schema-names-casing: pascal @ 100% (n=17)
+#   - schema-properties-casing: snake @ 100% (n=43)
+#   - security: global (root) — NOT emitting operation-security-required
+#   - pagination params observed: ['limit', 'offset']
+#   - merge: kept 24 existing, added 7 measured, upgraded 0
+#   - added: servers-https-only, servers-expected-domain, path-params-casing, query-params-casing, schema-names-casing, schema-properties-casing, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   albato-auth-apikey-required:
     description: Albato APIs must define API key authentication
     message: Security scheme must include ApiKeyAuth
     severity: error
-    given: "$.components.securitySchemes"
+    given: $.components.securitySchemes
     then:
       field: ApiKeyAuth
       function: truthy
-
   albato-global-security:
     description: Global security must be defined
     message: Top-level security must be set
     severity: error
-    given: "$"
+    given: $
     then:
       field: security
       function: truthy
-
   albato-info-title:
     description: API must have a title
     message: Info must have a title
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: title
       function: truthy
-
   albato-info-description:
     description: API must have a description
     message: Info must have a description
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: description
       function: truthy
-
   albato-info-version:
     description: API must have a version
     message: Info must have a version
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: version
       function: truthy
-
   albato-path-lowercase:
     description: Paths must be lowercase
-    message: "Path '{{property}}' must use lowercase"
+    message: Path '{{property}}' must use lowercase
     severity: error
-    given: "$.paths"
+    given: $.paths
     then:
       function: pattern
       functionOptions:
-        notMatch: "[A-Z_]"
-
+        notMatch: '[A-Z_]'
   albato-operation-id:
     description: Operations must have operationId
     message: Operation must have an operationId
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: operationId
       function: truthy
-
   albato-operation-summary:
     description: Operations must have a summary
     message: Operation must have a summary
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: summary
       function: truthy
-
   albato-operation-description:
     description: Operations should have a description
     message: Operation should have a description
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: description
       function: truthy
-
   albato-operation-tags:
     description: Operations must have tags
     message: Operation must have tags
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: tags
       function: truthy
-
   albato-response-200-get:
     description: GET operations must return 200
     message: GET must define a 200 response
     severity: error
-    given: "$.paths[*].get.responses"
+    given: $.paths[*].get.responses
     then:
-      field: "200"
+      field: '200'
       function: defined
-
   albato-response-201-post:
     description: POST operations should return 201
     message: POST should define a 201 response
     severity: warn
-    given: "$.paths[*].post.responses"
+    given: $.paths[*].post.responses
     then:
-      field: "201"
+      field: '201'
       function: defined
-
   albato-response-401:
     description: Operations should document 401
     message: Operations should define a 401 response
     severity: warn
-    given: "$.paths[*].get.responses"
+    given: $.paths[*].get.responses
     then:
-      field: "401"
+      field: '401'
       function: defined
-
   albato-response-json:
     description: Responses must use application/json
     message: Response must define application/json
     severity: error
-    given: "$.paths[*][get,post,put].responses[200,201].content"
+    given: $.paths[*][get,post,put].responses[200,201].content
     then:
       field: application/json
       function: defined
-
   albato-schema-description:
     description: Schemas must have descriptions
     message: Schema must have a description
     severity: warn
-    given: "$.components.schemas[*]"
+    given: $.components.schemas[*]
     then:
       field: description
       function: truthy
-
   albato-property-type:
     description: Properties must have types
     message: Property must define a type
     severity: error
-    given: "$.components.schemas[*].properties[*]"
+    given: $.components.schemas[*].properties[*]
     then:
       field: type
       function: truthy
-
   albato-parameter-description:
     description: Parameters should have descriptions
     message: Parameter should have a description
     severity: warn
-    given: "$.paths[*][*].parameters[*]"
+    given: $.paths[*][*].parameters[*]
     then:
       field: description
       function: truthy
-
   albato-path-param-schema:
     description: Path parameters must have schemas
     message: Path parameter must define a schema
     severity: error
-    given: "$.paths[*][*].parameters[?(@.in=='path')]"
+    given: $.paths[*][*].parameters[?(@.in=='path')]
     then:
       field: schema
       function: truthy
-
   albato-operation-id-camel-case:
     description: operationId must use camelCase
-    message: "operationId '{{value}}' must be camelCase"
+    message: operationId '{{value}}' must be camelCase
     severity: warn
-    given: "$.paths[*][*].operationId"
+    given: $.paths[*][*].operationId
     then:
       function: pattern
       functionOptions:
-        match: "^[a-z][a-zA-Z0-9]*$"
-
+        match: ^[a-z][a-zA-Z0-9]*$
   albato-schema-pascal-case:
     description: Schema names must use PascalCase
-    message: "Schema '{{property}}' must be PascalCase"
+    message: Schema '{{property}}' must be PascalCase
     severity: warn
-    given: "$.components.schemas"
+    given: $.components.schemas
     then:
       function: pattern
       functionOptions:
-        match: "^[A-Z][a-zA-Z0-9]*$"
-
+        match: ^[A-Z][a-zA-Z0-9]*$
   albato-request-body-json:
     description: Request bodies must use application/json
     message: Request body must define application/json
     severity: error
-    given: "$.paths[*][post,put,patch].requestBody.content"
+    given: $.paths[*][post,put,patch].requestBody.content
     then:
       field: application/json
       function: defined
-
   albato-request-body-required:
     description: POST request bodies should be required
     message: POST request body should be marked required
     severity: warn
-    given: "$.paths[*].post.requestBody"
+    given: $.paths[*].post.requestBody
     then:
       field: required
       function: truthy
-
   albato-servers-defined:
     description: API must define servers
     message: API must include servers
     severity: error
-    given: "$"
+    given: $
     then:
       field: servers
       function: truthy
-
   albato-tags-at-root:
     description: Tags must be documented at root
     message: Tags should be defined at root level
     severity: warn
-    given: "$"
+    given: $
     then:
       field: tags
+      function: truthy
+  servers-https-only:
+    description: Server URLs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: ^https://
+  servers-expected-domain:
+    description: Server URLs should be on the albato.com domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: albato\.com
+  path-params-casing:
+    description: Path parameters should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*].parameters[?(@.in=='path')].name
+    then:
+      function: casing
+      functionOptions:
+        type: snake
+  query-params-casing:
+    description: Query parameters should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: snake
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
       function: truthy
