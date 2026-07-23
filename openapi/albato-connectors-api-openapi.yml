@@ -1,0 +1,77 @@
+openapi: 3.0.3
+info:
+  title: Albato Automations Connectors API
+  description: REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.
+  version: 1.0.0
+  contact:
+    name: Albato Support
+    url: https://albato.com
+servers:
+- url: https://albato.com/api/v1
+  description: Albato API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Connectors
+  description: Manage app connectors
+paths:
+  /connectors:
+    get:
+      operationId: listConnectors
+      summary: List connectors
+      description: Returns all available app connectors for embedded use.
+      tags:
+      - Connectors
+      parameters:
+      - name: search
+        in: query
+        description: Search by connector name
+        schema:
+          type: string
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 50
+      responses:
+        '200':
+          description: List of connectors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectorList'
+components:
+  schemas:
+    ConnectorList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Connector'
+    Connector:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+        description:
+          type: string
+        triggers_count:
+          type: integer
+        actions_count:
+          type: integer
+        icon_url:
+          type: string
+          format: uri
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Albato account API key

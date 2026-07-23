@@ -1,0 +1,169 @@
+openapi: 3.0.3
+info:
+  title: Albato Automations Teams API
+  description: REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.
+  version: 1.0.0
+  contact:
+    name: Albato Support
+    url: https://albato.com
+servers:
+- url: https://albato.com/api/v1
+  description: Albato API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Teams
+  description: Manage embedded teams (customer accounts)
+paths:
+  /teams:
+    get:
+      operationId: listTeams
+      summary: List teams
+      description: Returns all embedded teams (customer accounts).
+      tags:
+      - Teams
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 20
+      - name: offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+      responses:
+        '200':
+          description: List of teams
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamList'
+        '401':
+          description: Unauthorized
+    post:
+      operationId: createTeam
+      summary: Create a team
+      description: Creates a new embedded team for a customer account.
+      tags:
+      - Teams
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamRequest'
+      responses:
+        '201':
+          description: Team created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Team'
+  /teams/{id}:
+    get:
+      operationId: getTeam
+      summary: Get a team
+      description: Returns details for a specific team.
+      tags:
+      - Teams
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Team ID
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Team details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Team'
+    put:
+      operationId: updateTeam
+      summary: Update a team
+      description: Updates an existing team.
+      tags:
+      - Teams
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamRequest'
+      responses:
+        '200':
+          description: Team updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Team'
+    delete:
+      operationId: deleteTeam
+      summary: Delete a team
+      description: Deletes a team and all associated resources.
+      tags:
+      - Teams
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Deleted
+components:
+  schemas:
+    Team:
+      allOf:
+      - $ref: '#/components/schemas/TeamRequest'
+      - type: object
+        properties:
+          id:
+            type: string
+          active_automations:
+            type: integer
+          transaction_count:
+            type: integer
+          created_at:
+            type: string
+            format: date-time
+    TeamList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Team'
+    TeamRequest:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Team display name
+        external_id:
+          type: string
+          description: External identifier from your system
+        plan:
+          type: string
+          description: Plan identifier for this team
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Albato account API key

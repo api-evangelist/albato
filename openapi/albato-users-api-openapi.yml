@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Albato Automations Users API
+  description: REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.
+  version: 1.0.0
+  contact:
+    name: Albato Support
+    url: https://albato.com
+servers:
+- url: https://albato.com/api/v1
+  description: Albato API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Users
+  description: Manage team users
+paths:
+  /teams/{teamId}/users:
+    get:
+      operationId: listTeamUsers
+      summary: List team users
+      description: Returns users for a specific team.
+      tags:
+      - Users
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        description: Team ID
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserList'
+    post:
+      operationId: createTeamUser
+      summary: Create a team user
+      description: Adds a new user to a team.
+      tags:
+      - Users
+      parameters:
+      - name: teamId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      allOf:
+      - $ref: '#/components/schemas/UserRequest'
+      - type: object
+        properties:
+          id:
+            type: string
+          team_id:
+            type: string
+          created_at:
+            type: string
+            format: date-time
+    UserRequest:
+      type: object
+      required:
+      - email
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        role:
+          type: string
+          enum:
+          - admin
+          - member
+    UserList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Albato account API key

@@ -1,0 +1,98 @@
+openapi: 3.0.3
+info:
+  title: Albato Automations Templates API
+  description: REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.
+  version: 1.0.0
+  contact:
+    name: Albato Support
+    url: https://albato.com
+servers:
+- url: https://albato.com/api/v1
+  description: Albato API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Templates
+  description: Manage automation templates
+paths:
+  /templates:
+    get:
+      operationId: listTemplates
+      summary: List templates
+      description: Returns automation templates available for embedded use.
+      tags:
+      - Templates
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 20
+      responses:
+        '200':
+          description: List of templates
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplateList'
+    post:
+      operationId: createTemplate
+      summary: Create a template
+      description: Creates a new automation template for embedded users.
+      tags:
+      - Templates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TemplateRequest'
+      responses:
+        '201':
+          description: Template created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Template'
+components:
+  schemas:
+    TemplateList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Template'
+    TemplateRequest:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+        steps:
+          type: array
+          items:
+            type: object
+    Template:
+      allOf:
+      - $ref: '#/components/schemas/TemplateRequest'
+      - type: object
+        properties:
+          id:
+            type: string
+          created_at:
+            type: string
+            format: date-time
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Albato account API key
