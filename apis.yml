@@ -10,7 +10,20 @@ tags:
 - Webhooks
 - White-Label
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/albato.png
 description: Albato is a no-code automation platform and embedded iPaaS that enables businesses to automate workflows by connecting
   1,000+ apps without writing code. Supports multi-step automations with triggers, actions, conditions, and delays. Albato
   Embedded allows SaaS companies to offer white-label native integrations to their customers.
@@ -18,81 +31,66 @@ created: '2025-06-06'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: albato:automations-api
+- aid: albato:albato-automations-api
   name: Albato Automations API
+  description: Manage automation workflows
+  humanURL: https://albato.com
+  baseURL: https://albato.com/api/v1
   tags:
-  - Automation
-  - Workflow
-  - No-Code
-  - Executions
+  - Automations
   properties:
-  - url: https://albato.com
-    type: Documentation
-  - url: openapi/albato-automations-openapi.yaml
-    type: OpenAPI
-  - url: json-schema/albato-albato-automations-automation-schema.json
-    type: JSONSchema
-  - url: json-schema/albato-albato-automations-automation-step-schema.json
-    type: JSONSchema
-  - url: json-schema/albato-albato-automations-execution-schema.json
-    type: JSONSchema
-  - url: json-structure/albato-albato-automations-automation-structure.json
-    type: JSONStructure
-  - url: json-structure/albato-albato-automations-automation-step-structure.json
-    type: JSONStructure
-  - url: json-structure/albato-albato-automations-execution-structure.json
-    type: JSONStructure
-  - url: examples/albato-albato-automations-automation-example.json
-    type: Examples
-  - url: examples/albato-albato-automations-automation-step-example.json
-    type: Examples
-  - url: examples/albato-albato-automations-execution-example.json
-    type: Examples
+  - type: OpenAPI
+    url: openapi/albato-automations-api-openapi.yml
+  - type: Documentation
+    url: https://albato.com
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-step-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-execution-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-step-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-execution-structure.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-step-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-execution-example.json
   - type: X-NaftikoCapability
     url: capabilities/automations-automations.yaml
   - type: X-NaftikoCapability
     url: capabilities/automations-executions.yaml
-  humanURL: https://albato.com
-  baseURL: https://albato.com/api/v1
-  description: REST API for managing multi-step automation workflows in Albato. Supports creating, enabling, disabling, and
-    monitoring automation executions across 1,000+ connected apps.
-- aid: albato:embedded-api
-  name: Albato Embedded API
-  tags:
-  - Embedded iPaaS
-  - White-Label
-  - Teams
-  - Connectors
-  - Templates
-  properties:
-  - url: https://albato.com/embedded
-    type: Documentation
-  - url: openapi/albato-embedded-openapi.yaml
-    type: OpenAPI
-  - url: json-schema/albato-albato-embedded-team-schema.json
-    type: JSONSchema
-  - url: json-schema/albato-albato-embedded-user-schema.json
-    type: JSONSchema
-  - url: json-schema/albato-albato-embedded-connector-schema.json
-    type: JSONSchema
-  - url: json-schema/albato-albato-embedded-template-schema.json
-    type: JSONSchema
-  - url: json-structure/albato-albato-embedded-team-structure.json
-    type: JSONStructure
-  - url: json-structure/albato-albato-embedded-user-structure.json
-    type: JSONStructure
-  - url: json-structure/albato-albato-embedded-connector-structure.json
-    type: JSONStructure
-  - url: json-structure/albato-albato-embedded-template-structure.json
-    type: JSONStructure
-  - url: examples/albato-albato-embedded-team-example.json
-    type: Examples
-  - url: examples/albato-albato-embedded-user-example.json
-    type: Examples
-  - url: examples/albato-albato-embedded-connector-example.json
-    type: Examples
-  - url: examples/albato-albato-embedded-template-example.json
-    type: Examples
+  - type: Documentation
+    url: https://albato.com/embedded
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-team-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-user-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-template-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-team-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-user-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-connector-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-template-structure.json
+  - type: Examples
+    url: examples/albato-albato-embedded-team-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-user-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-connector-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-template-example.json
   - type: X-NaftikoCapability
     url: capabilities/embedded-connectors.yaml
   - type: X-NaftikoCapability
@@ -101,11 +99,349 @@ apis:
     url: capabilities/embedded-templates.yaml
   - type: X-NaftikoCapability
     url: capabilities/embedded-users.yaml
-  humanURL: https://albato.com/embedded
-  baseURL: https://albato.com/api/v1/embedded
-  description: REST API for Albato Embedded iPaaS enabling SaaS companies to manage customer teams, app connectors, and automation
-    templates for white-label integration delivery.
+- aid: albato:albato-connectors-api
+  name: Albato Connectors API
+  description: Manage app connectors
+  humanURL: https://albato.com
+  baseURL: https://albato.com/api/v1
+  tags:
+  - Connectors
+  properties:
+  - type: OpenAPI
+    url: openapi/albato-connectors-api-openapi.yml
+  - type: Documentation
+    url: https://albato.com
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-step-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-execution-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-step-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-execution-structure.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-step-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-execution-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/automations-automations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/automations-executions.yaml
+  - type: Documentation
+    url: https://albato.com/embedded
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-team-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-user-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-template-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-team-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-user-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-connector-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-template-structure.json
+  - type: Examples
+    url: examples/albato-albato-embedded-team-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-user-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-connector-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-template-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-connectors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-teams.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-templates.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-users.yaml
+- aid: albato:albato-executions-api
+  name: Albato Executions API
+  description: Monitor automation execution history
+  humanURL: https://albato.com
+  baseURL: https://albato.com/api/v1
+  tags:
+  - Executions
+  properties:
+  - type: OpenAPI
+    url: openapi/albato-executions-api-openapi.yml
+  - type: Documentation
+    url: https://albato.com
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-step-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-execution-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-step-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-execution-structure.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-step-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-execution-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/automations-automations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/automations-executions.yaml
+  - type: Documentation
+    url: https://albato.com/embedded
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-team-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-user-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-template-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-team-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-user-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-connector-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-template-structure.json
+  - type: Examples
+    url: examples/albato-albato-embedded-team-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-user-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-connector-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-template-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-connectors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-teams.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-templates.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-users.yaml
+- aid: albato:albato-teams-api
+  name: Albato Teams API
+  description: Manage embedded teams (customer accounts)
+  humanURL: https://albato.com
+  baseURL: https://albato.com/api/v1
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/albato-teams-api-openapi.yml
+  - type: Documentation
+    url: https://albato.com
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-step-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-execution-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-step-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-execution-structure.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-step-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-execution-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/automations-automations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/automations-executions.yaml
+  - type: Documentation
+    url: https://albato.com/embedded
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-team-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-user-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-template-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-team-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-user-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-connector-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-template-structure.json
+  - type: Examples
+    url: examples/albato-albato-embedded-team-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-user-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-connector-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-template-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-connectors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-teams.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-templates.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-users.yaml
+- aid: albato:albato-templates-api
+  name: Albato Templates API
+  description: Manage automation templates
+  humanURL: https://albato.com
+  baseURL: https://albato.com/api/v1
+  tags:
+  - Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/albato-templates-api-openapi.yml
+  - type: Documentation
+    url: https://albato.com
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-step-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-execution-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-step-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-execution-structure.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-step-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-execution-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/automations-automations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/automations-executions.yaml
+  - type: Documentation
+    url: https://albato.com/embedded
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-team-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-user-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-template-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-team-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-user-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-connector-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-template-structure.json
+  - type: Examples
+    url: examples/albato-albato-embedded-team-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-user-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-connector-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-template-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-connectors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-teams.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-templates.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-users.yaml
+- aid: albato:albato-users-api
+  name: Albato Users API
+  description: Manage team users
+  humanURL: https://albato.com
+  baseURL: https://albato.com/api/v1
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/albato-users-api-openapi.yml
+  - type: Documentation
+    url: https://albato.com
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-automation-step-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-automations-execution-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-automation-step-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-automations-execution-structure.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-automation-step-example.json
+  - type: Examples
+    url: examples/albato-albato-automations-execution-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/automations-automations.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/automations-executions.yaml
+  - type: Documentation
+    url: https://albato.com/embedded
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-team-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-user-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-connector-schema.json
+  - type: JSONSchema
+    url: json-schema/albato-albato-embedded-template-schema.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-team-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-user-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-connector-structure.json
+  - type: JSONStructure
+    url: json-structure/albato-albato-embedded-template-structure.json
+  - type: Examples
+    url: examples/albato-albato-embedded-team-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-user-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-connector-example.json
+  - type: Examples
+    url: examples/albato-albato-embedded-template-example.json
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-connectors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-teams.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-templates.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/embedded-users.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/albato/overview
 - type: AgenticAccess
   url: agentic-access/albato-agentic-access.yml
 - type: TrustCenter
