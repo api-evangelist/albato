@@ -1,0 +1,872 @@
+{
+  "info": {
+    "_postman_id": "bfffdd36-bc82-47a4-96a1-f37a4f827d76",
+    "name": "Albato Automations API",
+    "description": "REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.\n\nContact Support:\n Name: Albato Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:29:26.000Z",
+    "updatedAt": "2026-07-28T00:29:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bfffdd36-bc82-47a4-96a1-f37a4f827d76"
+  },
+  "item": [
+    {
+      "name": "automations",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "enable",
+              "item": [
+                {
+                  "name": "Enable an automation",
+                  "id": "5be35f1e-6bc6-44cb-9d12-d4a0e02144b5",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/automations/:id/enable",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "automations",
+                        ":id",
+                        "enable"
+                      ],
+                      "variable": [
+                        {
+                          "id": "93983d16-e389-417c-8f02-244e20a00f27",
+                          "key": "id",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Activates an automation to start processing triggers."
+                  },
+                  "response": [
+                    {
+                      "id": "50a79e51-35e6-4f72-8a87-7cfd06e5a1b5",
+                      "name": "Automation enabled",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/automations/:id/enable",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "automations",
+                            ":id",
+                            "enable"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"tempor28\": true,\n        \"ipsum8\": 25475721\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"veniam_5\": 49605555,\n        \"veniam_4\": false\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"active\",\n  \"trigger_count\": \"<integer>\",\n  \"success_count\": \"<integer>\",\n  \"error_count\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T00:29:27.000Z",
+                      "updatedAt": "2026-07-28T00:29:27.000Z",
+                      "uid": "35240-50a79e51-35e6-4f72-8a87-7cfd06e5a1b5"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:29:27.000Z",
+                  "updatedAt": "2026-07-28T00:29:27.000Z",
+                  "uid": "35240-5be35f1e-6bc6-44cb-9d12-d4a0e02144b5"
+                }
+              ],
+              "id": "35a707e3-99ea-449e-9e2e-dcfc19a893e6",
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-35a707e3-99ea-449e-9e2e-dcfc19a893e6"
+            },
+            {
+              "name": "disable",
+              "item": [
+                {
+                  "name": "Disable an automation",
+                  "id": "9823026b-7c32-488f-8df3-2507ce3a5376",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/automations/:id/disable",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "automations",
+                        ":id",
+                        "disable"
+                      ],
+                      "variable": [
+                        {
+                          "id": "34c8af10-2001-4d4f-be34-8a2fee469419",
+                          "key": "id",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Deactivates an automation to pause processing."
+                  },
+                  "response": [
+                    {
+                      "id": "ce04e556-5f46-4dde-8021-7e77c3e256d2",
+                      "name": "Automation disabled",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/automations/:id/disable",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "automations",
+                            ":id",
+                            "disable"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"tempor28\": true,\n        \"ipsum8\": 25475721\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"veniam_5\": 49605555,\n        \"veniam_4\": false\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"active\",\n  \"trigger_count\": \"<integer>\",\n  \"success_count\": \"<integer>\",\n  \"error_count\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T00:29:27.000Z",
+                      "updatedAt": "2026-07-28T00:29:27.000Z",
+                      "uid": "35240-ce04e556-5f46-4dde-8021-7e77c3e256d2"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:29:27.000Z",
+                  "updatedAt": "2026-07-28T00:29:27.000Z",
+                  "uid": "35240-9823026b-7c32-488f-8df3-2507ce3a5376"
+                }
+              ],
+              "id": "1fe2997e-c626-4ab0-b14a-e94862521a7c",
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-1fe2997e-c626-4ab0-b14a-e94862521a7c"
+            },
+            {
+              "name": "Get an automation",
+              "id": "faa7f621-334a-44c4-84b6-79a8f1926110",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/automations/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "automations",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "26be9a51-685f-45a6-b095-cc396f178335",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) Automation ID"
+                    }
+                  ]
+                },
+                "description": "Returns a specific automation workflow."
+              },
+              "response": [
+                {
+                  "id": "4abc7d7d-5e6b-4fa4-a3de-d13f55802da7",
+                  "name": "Automation details",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/automations/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "automations",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"tempor28\": true,\n        \"ipsum8\": 25475721\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"veniam_5\": 49605555,\n        \"veniam_4\": false\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"active\",\n  \"trigger_count\": \"<integer>\",\n  \"success_count\": \"<integer>\",\n  \"error_count\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T00:29:27.000Z",
+                  "updatedAt": "2026-07-28T00:29:27.000Z",
+                  "uid": "35240-4abc7d7d-5e6b-4fa4-a3de-d13f55802da7"
+                },
+                {
+                  "id": "cff49bf9-dbe8-4b72-901a-a1019c3db3fb",
+                  "name": "Not found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/automations/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "automations",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T00:29:27.000Z",
+                  "updatedAt": "2026-07-28T00:29:27.000Z",
+                  "uid": "35240-cff49bf9-dbe8-4b72-901a-a1019c3db3fb"
+                }
+              ],
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-faa7f621-334a-44c4-84b6-79a8f1926110"
+            },
+            {
+              "name": "Update an automation",
+              "id": "7aa46053-172e-426f-8c6b-01b6a7021553",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"condition\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"et_efc\": 18585829.35158886\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"velit_14f\": -97570989,\n        \"dolor_f0e\": -4462280\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/automations/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "automations",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "61cb3e46-a708-47ee-aad9-9033c7239b8e",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Updates an existing automation workflow."
+              },
+              "response": [
+                {
+                  "id": "99af2e39-9913-465b-bbf1-f57ac66b51b1",
+                  "name": "Automation updated",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"condition\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"et_efc\": 18585829.35158886\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"velit_14f\": -97570989,\n        \"dolor_f0e\": -4462280\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/automations/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "automations",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"tempor28\": true,\n        \"ipsum8\": 25475721\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"veniam_5\": 49605555,\n        \"veniam_4\": false\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"active\",\n  \"trigger_count\": \"<integer>\",\n  \"success_count\": \"<integer>\",\n  \"error_count\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T00:29:27.000Z",
+                  "updatedAt": "2026-07-28T00:29:27.000Z",
+                  "uid": "35240-99af2e39-9913-465b-bbf1-f57ac66b51b1"
+                }
+              ],
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-7aa46053-172e-426f-8c6b-01b6a7021553"
+            },
+            {
+              "name": "Delete an automation",
+              "id": "e4f19a82-177b-4848-84d9-5aca69a92760",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/automations/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "automations",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "9c661c49-b6e4-48aa-b76c-51ed662a11f6",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Deletes an automation workflow."
+              },
+              "response": [
+                {
+                  "id": "f618835c-5f49-4973-9632-495e64b0f861",
+                  "name": "Deleted",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/automations/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "automations",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T00:29:27.000Z",
+                  "updatedAt": "2026-07-28T00:29:27.000Z",
+                  "uid": "35240-f618835c-5f49-4973-9632-495e64b0f861"
+                }
+              ],
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-e4f19a82-177b-4848-84d9-5aca69a92760"
+            }
+          ],
+          "id": "df994f88-2025-4268-93e2-d7313ce8be54",
+          "createdAt": "2026-07-28T00:29:27.000Z",
+          "updatedAt": "2026-07-28T00:29:27.000Z",
+          "uid": "35240-df994f88-2025-4268-93e2-d7313ce8be54"
+        },
+        {
+          "name": "List automations",
+          "id": "835e3781-4bc8-4f92-9de0-4b70c07e3fd8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/automations?status=inactive&limit=20&offset=0",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "automations"
+              ],
+              "query": [
+                {
+                  "description": "Filter by status",
+                  "key": "status",
+                  "value": "inactive"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            },
+            "description": "Returns all automation workflows for the current account."
+          },
+          "response": [
+            {
+              "id": "5a999e1f-defc-42a8-9002-3f0869e083ba",
+              "name": "List of automations",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/automations?status=inactive&limit=20&offset=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "automations"
+                  ],
+                  "query": [
+                    {
+                      "description": "Filter by status",
+                      "key": "status",
+                      "value": "inactive"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"total\": \"<integer>\",\n  \"items\": [\n    {\n      \"name\": \"<string>\",\n      \"steps\": [\n        {\n          \"app\": \"<string>\",\n          \"type\": \"trigger\",\n          \"event\": \"<string>\",\n          \"config\": {\n            \"doloref\": true,\n            \"ea_c\": true,\n            \"culpa12\": \"Excepteur nisi\",\n            \"non_3c\": \"tempor velit\"\n          }\n        },\n        {\n          \"app\": \"<string>\",\n          \"type\": \"delay\",\n          \"event\": \"<string>\",\n          \"config\": {\n            \"quis_54\": \"pro\",\n            \"minim_59\": -45781073,\n            \"commodoa74\": -11166219.297731757\n          }\n        }\n      ],\n      \"description\": \"<string>\",\n      \"id\": \"<string>\",\n      \"status\": \"inactive\",\n      \"trigger_count\": \"<integer>\",\n      \"success_count\": \"<integer>\",\n      \"error_count\": \"<integer>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_at\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"steps\": [\n        {\n          \"app\": \"<string>\",\n          \"type\": \"trigger\",\n          \"event\": \"<string>\",\n          \"config\": {\n            \"elit_6\": 22304368.12857844,\n            \"dolore8\": -96419472.73330013\n          }\n        },\n        {\n          \"app\": \"<string>\",\n          \"type\": \"trigger\",\n          \"event\": \"<string>\",\n          \"config\": {\n            \"nullae\": 17905435,\n            \"tempor_1\": false\n          }\n        }\n      ],\n      \"description\": \"<string>\",\n      \"id\": \"<string>\",\n      \"status\": \"active\",\n      \"trigger_count\": \"<integer>\",\n      \"success_count\": \"<integer>\",\n      \"error_count\": \"<integer>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_at\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-5a999e1f-defc-42a8-9002-3f0869e083ba"
+            },
+            {
+              "id": "80afb904-d4e3-4754-9bd9-02777b86b77a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/automations?status=inactive&limit=20&offset=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "automations"
+                  ],
+                  "query": [
+                    {
+                      "description": "Filter by status",
+                      "key": "status",
+                      "value": "inactive"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-80afb904-d4e3-4754-9bd9-02777b86b77a"
+            }
+          ],
+          "createdAt": "2026-07-28T00:29:27.000Z",
+          "updatedAt": "2026-07-28T00:29:27.000Z",
+          "uid": "35240-835e3781-4bc8-4f92-9de0-4b70c07e3fd8"
+        },
+        {
+          "name": "Create an automation",
+          "id": "b7a962d1-7fa4-4116-9129-58cb9e49717f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"condition\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"et_efc\": 18585829.35158886\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"velit_14f\": -97570989,\n        \"dolor_f0e\": -4462280\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/automations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "automations"
+              ]
+            },
+            "description": "Creates a new automation workflow."
+          },
+          "response": [
+            {
+              "id": "1363bce6-8a83-4a9b-b18e-13d78b718313",
+              "name": "Automation created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"condition\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"et_efc\": 18585829.35158886\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"velit_14f\": -97570989,\n        \"dolor_f0e\": -4462280\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/automations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "automations"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"tempor28\": true,\n        \"ipsum8\": 25475721\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"veniam_5\": 49605555,\n        \"veniam_4\": false\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"<string>\",\n  \"status\": \"active\",\n  \"trigger_count\": \"<integer>\",\n  \"success_count\": \"<integer>\",\n  \"error_count\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-1363bce6-8a83-4a9b-b18e-13d78b718313"
+            },
+            {
+              "id": "484b51a7-3bfa-4a72-b26b-45c136878423",
+              "name": "Invalid request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"condition\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"et_efc\": 18585829.35158886\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"trigger\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"velit_14f\": -97570989,\n        \"dolor_f0e\": -4462280\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/automations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "automations"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T00:29:27.000Z",
+              "updatedAt": "2026-07-28T00:29:27.000Z",
+              "uid": "35240-484b51a7-3bfa-4a72-b26b-45c136878423"
+            }
+          ],
+          "createdAt": "2026-07-28T00:29:27.000Z",
+          "updatedAt": "2026-07-28T00:29:27.000Z",
+          "uid": "35240-b7a962d1-7fa4-4116-9129-58cb9e49717f"
+        }
+      ],
+      "id": "3625b401-8dfc-4907-9043-7575404dbc70",
+      "createdAt": "2026-07-28T00:29:27.000Z",
+      "updatedAt": "2026-07-28T00:29:27.000Z",
+      "uid": "35240-3625b401-8dfc-4907-9043-7575404dbc70"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://albato.com/api/v1"
+    }
+  ]
+}

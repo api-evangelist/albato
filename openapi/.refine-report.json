@@ -1,0 +1,24 @@
+{
+  "provider": "albato",
+  "sources": [
+    "albato-automations-api-openapi.yml",
+    "albato-connectors-api-openapi.yml",
+    "albato-executions-api-openapi.yml",
+    "albato-teams-api-openapi.yml",
+    "albato-templates-api-openapi.yml",
+    "albato-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "albato-automations-api-openapi.yml",
+    "albato-connectors-api-openapi.yml",
+    "albato-executions-api-openapi.yml",
+    "albato-teams-api-openapi.yml",
+    "albato-templates-api-openapi.yml",
+    "albato-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

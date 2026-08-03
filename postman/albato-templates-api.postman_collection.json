@@ -1,0 +1,235 @@
+{
+  "info": {
+    "_postman_id": "32a1a4dd-e815-4d7b-a308-8d7b3e8c3212",
+    "name": "Albato Automations Templates API",
+    "description": "REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.\n\nContact Support:\n Name: Albato Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:29:30.000Z",
+    "updatedAt": "2026-07-28T00:29:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-32a1a4dd-e815-4d7b-a308-8d7b3e8c3212"
+  },
+  "item": [
+    {
+      "name": "templates",
+      "item": [
+        {
+          "name": "List templates",
+          "id": "cb9ea2ec-6c1d-4fc3-a7b4-de0ae304007d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/templates?limit=20",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "templates"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "Returns automation templates available for embedded use."
+          },
+          "response": [
+            {
+              "id": "116077cf-03fd-4640-9bf0-23def6e32d66",
+              "name": "List of templates",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/templates?limit=20",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "templates"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"total\": \"<integer>\",\n  \"items\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"category\": \"<string>\",\n      \"id\": \"<string>\",\n      \"created_at\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"category\": \"<string>\",\n      \"id\": \"<string>\",\n      \"created_at\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T00:29:30.000Z",
+              "updatedAt": "2026-07-28T00:29:30.000Z",
+              "uid": "35240-116077cf-03fd-4640-9bf0-23def6e32d66"
+            }
+          ],
+          "createdAt": "2026-07-28T00:29:30.000Z",
+          "updatedAt": "2026-07-28T00:29:30.000Z",
+          "uid": "35240-cb9ea2ec-6c1d-4fc3-a7b4-de0ae304007d"
+        },
+        {
+          "name": "Create a template",
+          "id": "8ce054cd-b85c-4050-8e9c-5d75a9ba4dfc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"category\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/templates",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "templates"
+              ]
+            },
+            "description": "Creates a new automation template for embedded users."
+          },
+          "response": [
+            {
+              "id": "4da7b757-a072-4202-8927-0919eeb2dab5",
+              "name": "Template created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"category\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/templates",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "templates"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"category\": \"<string>\",\n  \"id\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+              "createdAt": "2026-07-28T00:29:30.000Z",
+              "updatedAt": "2026-07-28T00:29:30.000Z",
+              "uid": "35240-4da7b757-a072-4202-8927-0919eeb2dab5"
+            }
+          ],
+          "createdAt": "2026-07-28T00:29:30.000Z",
+          "updatedAt": "2026-07-28T00:29:30.000Z",
+          "uid": "35240-8ce054cd-b85c-4050-8e9c-5d75a9ba4dfc"
+        }
+      ],
+      "id": "9861cc5f-1ea7-4de1-8690-0a163089f355",
+      "createdAt": "2026-07-28T00:29:30.000Z",
+      "updatedAt": "2026-07-28T00:29:30.000Z",
+      "uid": "35240-9861cc5f-1ea7-4de1-8690-0a163089f355"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://albato.com/api/v1"
+    }
+  ]
+}

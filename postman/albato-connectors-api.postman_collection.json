@@ -1,0 +1,144 @@
+{
+  "info": {
+    "_postman_id": "8fa46de7-5e23-44d5-beef-f7dc15f78a28",
+    "name": "Albato Automations Connectors API",
+    "description": "REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.\n\nContact Support:\n Name: Albato Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:29:27.000Z",
+    "updatedAt": "2026-07-28T00:29:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8fa46de7-5e23-44d5-beef-f7dc15f78a28"
+  },
+  "item": [
+    {
+      "name": "connectors",
+      "item": [
+        {
+          "name": "List connectors",
+          "id": "321a5343-d280-4196-97dc-faffab1b989c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/connectors?search=<string>&limit=50",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connectors"
+              ],
+              "query": [
+                {
+                  "description": "Search by connector name",
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "50"
+                }
+              ]
+            },
+            "description": "Returns all available app connectors for embedded use."
+          },
+          "response": [
+            {
+              "id": "c04a3fc5-be32-484e-973d-fc3b4a26ecb1",
+              "name": "List of connectors",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/connectors?search=<string>&limit=50",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connectors"
+                  ],
+                  "query": [
+                    {
+                      "description": "Search by connector name",
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"total\": \"<integer>\",\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"triggers_count\": \"<integer>\",\n      \"actions_count\": \"<integer>\",\n      \"icon_url\": \"<uri>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"triggers_count\": \"<integer>\",\n      \"actions_count\": \"<integer>\",\n      \"icon_url\": \"<uri>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T00:29:28.000Z",
+              "updatedAt": "2026-07-28T00:29:28.000Z",
+              "uid": "35240-c04a3fc5-be32-484e-973d-fc3b4a26ecb1"
+            }
+          ],
+          "createdAt": "2026-07-28T00:29:27.000Z",
+          "updatedAt": "2026-07-28T00:29:27.000Z",
+          "uid": "35240-321a5343-d280-4196-97dc-faffab1b989c"
+        }
+      ],
+      "id": "7d442675-5e32-431f-8173-becb8c4e5d46",
+      "createdAt": "2026-07-28T00:29:27.000Z",
+      "updatedAt": "2026-07-28T00:29:27.000Z",
+      "uid": "35240-7d442675-5e32-431f-8173-becb8c4e5d46"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://albato.com/api/v1"
+    }
+  ]
+}
