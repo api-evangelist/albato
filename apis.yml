@@ -61,10 +61,6 @@ apis:
     url: examples/albato-albato-automations-automation-step-example.json
   - type: Examples
     url: examples/albato-albato-automations-execution-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/automations-automations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/automations-executions.yaml
   - type: Documentation
     url: https://albato.com/embedded
   - type: JSONSchema
@@ -91,14 +87,6 @@ apis:
     url: examples/albato-albato-embedded-connector-example.json
   - type: Examples
     url: examples/albato-albato-embedded-template-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-teams.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-templates.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-users.yaml
 - aid: albato:albato-connectors-api
   name: Albato Connectors API
   description: Manage app connectors
@@ -129,10 +117,6 @@ apis:
     url: examples/albato-albato-automations-automation-step-example.json
   - type: Examples
     url: examples/albato-albato-automations-execution-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/automations-automations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/automations-executions.yaml
   - type: Documentation
     url: https://albato.com/embedded
   - type: JSONSchema
@@ -159,14 +143,6 @@ apis:
     url: examples/albato-albato-embedded-connector-example.json
   - type: Examples
     url: examples/albato-albato-embedded-template-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-teams.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-templates.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-users.yaml
 - aid: albato:albato-executions-api
   name: Albato Executions API
   description: Monitor automation execution history
@@ -197,10 +173,6 @@ apis:
     url: examples/albato-albato-automations-automation-step-example.json
   - type: Examples
     url: examples/albato-albato-automations-execution-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/automations-automations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/automations-executions.yaml
   - type: Documentation
     url: https://albato.com/embedded
   - type: JSONSchema
@@ -227,14 +199,6 @@ apis:
     url: examples/albato-albato-embedded-connector-example.json
   - type: Examples
     url: examples/albato-albato-embedded-template-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-teams.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-templates.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-users.yaml
 - aid: albato:albato-teams-api
   name: Albato Teams API
   description: Manage embedded teams (customer accounts)
@@ -265,10 +229,6 @@ apis:
     url: examples/albato-albato-automations-automation-step-example.json
   - type: Examples
     url: examples/albato-albato-automations-execution-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/automations-automations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/automations-executions.yaml
   - type: Documentation
     url: https://albato.com/embedded
   - type: JSONSchema
@@ -295,14 +255,6 @@ apis:
     url: examples/albato-albato-embedded-connector-example.json
   - type: Examples
     url: examples/albato-albato-embedded-template-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-teams.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-templates.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-users.yaml
 - aid: albato:albato-templates-api
   name: Albato Templates API
   description: Manage automation templates
@@ -333,10 +285,6 @@ apis:
     url: examples/albato-albato-automations-automation-step-example.json
   - type: Examples
     url: examples/albato-albato-automations-execution-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/automations-automations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/automations-executions.yaml
   - type: Documentation
     url: https://albato.com/embedded
   - type: JSONSchema
@@ -363,14 +311,6 @@ apis:
     url: examples/albato-albato-embedded-connector-example.json
   - type: Examples
     url: examples/albato-albato-embedded-template-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-teams.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-templates.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-users.yaml
 - aid: albato:albato-users-api
   name: Albato Users API
   description: Manage team users
@@ -401,10 +341,6 @@ apis:
     url: examples/albato-albato-automations-automation-step-example.json
   - type: Examples
     url: examples/albato-albato-automations-execution-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/automations-automations.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/automations-executions.yaml
   - type: Documentation
     url: https://albato.com/embedded
   - type: JSONSchema
@@ -431,14 +367,6 @@ apis:
     url: examples/albato-albato-embedded-connector-example.json
   - type: Examples
     url: examples/albato-albato-embedded-template-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-connectors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-teams.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-templates.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/embedded-users.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/albato/overview
