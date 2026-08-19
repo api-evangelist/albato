@@ -1,0 +1,167 @@
+{
+  "item": [
+    {
+      "id": "e3f0082a-d19c-4045-a579-196239656ead",
+      "name": "Executions",
+      "description": {
+        "content": "Monitor automation execution history",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4da8118e-192c-44ee-8770-018f5ab4a8e9",
+          "name": "List executions",
+          "request": {
+            "name": "List executions",
+            "description": {
+              "content": "Returns execution history for a specific automation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "automations",
+                ":id",
+                "executions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Automation ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0c0acb9f-fc6e-48aa-a133-897dcd9b1e28",
+              "name": "Execution list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations",
+                    ":id",
+                    "executions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Automation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 6929,\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"automation_id\": \"string\",\n      \"status\": \"success\",\n      \"started_at\": \"2014-01-11T15:53:32.263Z\",\n      \"finished_at\": \"1962-11-18T16:01:11.803Z\",\n      \"error_message\": \"string\",\n      \"steps_completed\": 9841\n    },\n    {\n      \"id\": \"string\",\n      \"automation_id\": \"string\",\n      \"status\": \"running\",\n      \"started_at\": \"1963-04-17T10:03:25.902Z\",\n      \"finished_at\": \"1962-09-13T14:33:31.159Z\",\n      \"error_message\": \"string\",\n      \"steps_completed\": 4583\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://albato.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bbc23d09-c61b-4d12-b071-6349f3545890",
+    "name": "Albato Automations Executions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.\n\nContact Support:\n Name: Albato Support",
+      "type": "text/plain"
+    }
+  }
+}

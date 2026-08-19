@@ -1,0 +1,898 @@
+{
+  "item": [
+    {
+      "id": "e9d4ce53-9ab0-456a-a9de-0b8204eaf0de",
+      "name": "Automations",
+      "description": {
+        "content": "Manage automation workflows",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "56846a72-3f5b-4823-acb9-70921cd6487b",
+          "name": "List automations",
+          "request": {
+            "name": "List automations",
+            "description": {
+              "content": "Returns all automation workflows for the current account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "automations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter by status"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "48c244f4-5d07-4933-9bbd-cbd8aead974f",
+              "name": "List of automations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 4212,\n  \"items\": [\n    {\n      \"name\": \"string\",\n      \"steps\": [\n        {\n          \"app\": \"string\",\n          \"type\": \"action\",\n          \"event\": \"string\",\n          \"config\": {\n            \"key_0\": 1328,\n            \"key_1\": 7246\n          }\n        },\n        {\n          \"app\": \"string\",\n          \"type\": \"trigger\",\n          \"event\": \"string\",\n          \"config\": {\n            \"key_0\": \"string\"\n          }\n        }\n      ],\n      \"description\": \"string\",\n      \"id\": \"string\",\n      \"status\": \"active\",\n      \"trigger_count\": 5451,\n      \"success_count\": 2368,\n      \"error_count\": 6591,\n      \"created_at\": \"1990-04-18T14:34:54.022Z\",\n      \"updated_at\": \"1970-04-21T13:42:02.789Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"steps\": [\n        {\n          \"app\": \"string\",\n          \"type\": \"trigger\",\n          \"event\": \"string\",\n          \"config\": {\n            \"key_0\": \"string\",\n            \"key_1\": 7208,\n            \"key_2\": true\n          }\n        },\n        {\n          \"app\": \"string\",\n          \"type\": \"delay\",\n          \"event\": \"string\",\n          \"config\": {\n            \"key_0\": \"string\",\n            \"key_1\": 7700\n          }\n        }\n      ],\n      \"description\": \"string\",\n      \"id\": \"string\",\n      \"status\": \"active\",\n      \"trigger_count\": 6657,\n      \"success_count\": 2079,\n      \"error_count\": 3353,\n      \"created_at\": \"1988-03-03T15:27:37.242Z\",\n      \"updated_at\": \"1979-07-28T01:09:40.964Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7fb08bbc-0934-4b7b-9960-af2a3fe43d55",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b213fcfd-8007-4def-b442-8add42fa1f48",
+          "name": "Create an automation",
+          "request": {
+            "name": "Create an automation",
+            "description": {
+              "content": "Creates a new automation workflow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "automations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": true,\n        \"key_1\": false\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": true,\n        \"key_2\": 9511.48028971764\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "087900af-a5b6-4132-a4cc-4d72e3ef6332",
+              "name": "Automation created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": 2501,\n        \"key_1\": 7311\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": 4231,\n        \"key_2\": \"string\",\n        \"key_3\": 4947.427463575643\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"string\",\n  \"status\": \"inactive\",\n  \"trigger_count\": 4833,\n  \"success_count\": 8094,\n  \"error_count\": 4406,\n  \"created_at\": \"1951-11-17T00:03:37.285Z\",\n  \"updated_at\": \"1948-01-23T13:59:54.062Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "000a620e-24ba-4096-abaa-b85e6df2776c",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": 2501,\n        \"key_1\": 7311\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": 4231,\n        \"key_2\": \"string\",\n        \"key_3\": 4947.427463575643\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a502076-aa24-4404-a372-bf48ac82d6d2",
+          "name": "Get an automation",
+          "request": {
+            "name": "Get an automation",
+            "description": {
+              "content": "Returns a specific automation workflow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "automations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Automation ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eed7ff82-524b-4ea3-b827-c7a9dcc17f5d",
+              "name": "Automation details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Automation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"string\",\n  \"status\": \"inactive\",\n  \"trigger_count\": 4833,\n  \"success_count\": 8094,\n  \"error_count\": 4406,\n  \"created_at\": \"1951-11-17T00:03:37.285Z\",\n  \"updated_at\": \"1948-01-23T13:59:54.062Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3fa3d18-93a5-4ffe-a385-ab17b8ff3400",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Automation ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61f0b49a-36d9-42c8-aef5-f7b3dbacfede",
+          "name": "Update an automation",
+          "request": {
+            "name": "Update an automation",
+            "description": {
+              "content": "Updates an existing automation workflow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "automations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": true,\n        \"key_1\": false\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": true,\n        \"key_2\": 9511.48028971764\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4022924c-f165-4e20-b4c0-ff22a6db07aa",
+              "name": "Automation updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": 2501,\n        \"key_1\": 7311\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": 4231,\n        \"key_2\": \"string\",\n        \"key_3\": 4947.427463575643\n      }\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"string\",\n  \"status\": \"inactive\",\n  \"trigger_count\": 4833,\n  \"success_count\": 8094,\n  \"error_count\": 4406,\n  \"created_at\": \"1951-11-17T00:03:37.285Z\",\n  \"updated_at\": \"1948-01-23T13:59:54.062Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e390ed78-c38b-47fe-adbb-126a7c124f86",
+          "name": "Delete an automation",
+          "request": {
+            "name": "Delete an automation",
+            "description": {
+              "content": "Deletes an automation workflow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "automations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "71a04cbb-4ad1-475e-8162-b840b1087272",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "928d9917-c55d-4484-90d8-35e6d65bceb1",
+          "name": "Enable an automation",
+          "request": {
+            "name": "Enable an automation",
+            "description": {
+              "content": "Activates an automation to start processing triggers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "automations",
+                ":id",
+                "enable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49c89b5f-57fa-4c6d-a284-78900f421c48",
+              "name": "Automation enabled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations",
+                    ":id",
+                    "enable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"string\",\n  \"status\": \"inactive\",\n  \"trigger_count\": 4833,\n  \"success_count\": 8094,\n  \"error_count\": 4406,\n  \"created_at\": \"1951-11-17T00:03:37.285Z\",\n  \"updated_at\": \"1948-01-23T13:59:54.062Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9efc4a5c-9b47-408e-8f7b-43f15b895a09",
+          "name": "Disable an automation",
+          "request": {
+            "name": "Disable an automation",
+            "description": {
+              "content": "Deactivates an automation to pause processing.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "automations",
+                ":id",
+                "disable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a636f4b3-bdf9-4491-aa44-a29a718cf2e2",
+              "name": "Automation disabled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "automations",
+                    ":id",
+                    "disable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false\n      }\n    },\n    {\n      \"app\": \"<string>\",\n      \"type\": \"<string>\",\n      \"event\": \"<string>\",\n      \"config\": {\n        \"key_0\": false,\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"description\": \"<string>\",\n  \"id\": \"string\",\n  \"status\": \"inactive\",\n  \"trigger_count\": 4833,\n  \"success_count\": 8094,\n  \"error_count\": 4406,\n  \"created_at\": \"1951-11-17T00:03:37.285Z\",\n  \"updated_at\": \"1948-01-23T13:59:54.062Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://albato.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3f9d41d9-7d50-41b6-bd7d-2ea0104e92cd",
+    "name": "Albato Automations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.\n\nContact Support:\n Name: Albato Support",
+      "type": "text/plain"
+    }
+  }
+}
