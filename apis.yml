@@ -29,7 +29,7 @@ description: Albato is a no-code automation platform and embedded iPaaS that ena
   Embedded allows SaaS companies to offer white-label native integrations to their customers.
 created: '2025-06-06'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: albato:albato-automations-api
   name: Albato Automations API
