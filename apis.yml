@@ -3,6 +3,14 @@ url: https://raw.githubusercontent.com/api-evangelist/albato/refs/heads/main/api
 name: Albato
 tags:
 - No-Code Automation
+- Workflow-Automation
+- Embedded iPaaS
+- App Integration
+- Integration
+- Webhook
+- White Label
+tags_raw:
+- No-Code Automation
 - Workflow Automation
 - Embedded iPaaS
 - App Integration
@@ -149,6 +157,8 @@ apis:
   humanURL: https://albato.com
   baseURL: https://albato.com/api/v1
   tags:
+  - Execution
+  tags_raw:
   - Executions
   properties:
   - type: OpenAPI
@@ -205,6 +215,8 @@ apis:
   humanURL: https://albato.com
   baseURL: https://albato.com/api/v1
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
@@ -317,6 +329,8 @@ apis:
   humanURL: https://albato.com
   baseURL: https://albato.com/api/v1
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
