@@ -395,6 +395,20 @@ apis:
   - type: Examples
     url: examples/albato-albato-embedded-template-example.json
 common:
+- type: Overlay
+  url: overlays/albato-automations-overlay.yaml
+- type: Packages
+  url: packages/albato-packages.yml
+- type: WellKnown
+  url: well-known/albato-well-known.yml
+- type: MCPServer
+  url: mcp/albato-mcp.yml
+- type: Conformance
+  url: conformance/albato-conformance.yml
+- type: ErrorCatalog
+  url: errors/albato-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/albato-lifecycle.yml
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/albato/overview
 - type: AgenticAccess
