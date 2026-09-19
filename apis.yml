@@ -58,6 +58,8 @@ apis:
   humanURL: https://albato.com
   baseURL: https://albato.com/api/v1
   tags:
+  - Automation
+  tags_raw:
   - Automations
   properties:
   - type: OpenAPI
