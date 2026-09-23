@@ -198,6 +198,29 @@ components:
         config:
           type: object
           additionalProperties: true
+    AutomationList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Automation'
+    AutomationRequest:
+      type: object
+      required:
+      - name
+      - steps
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/AutomationStep'
     Automation:
       allOf:
       - $ref: '#/components/schemas/AutomationRequest'
@@ -222,29 +245,6 @@ components:
           updated_at:
             type: string
             format: date-time
-    AutomationList:
-      type: object
-      properties:
-        total:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Automation'
-    AutomationRequest:
-      type: object
-      required:
-      - name
-      - steps
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        steps:
-          type: array
-          items:
-            $ref: '#/components/schemas/AutomationStep'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

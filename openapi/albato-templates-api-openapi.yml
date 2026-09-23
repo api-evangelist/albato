@@ -1,14 +1,14 @@
 openapi: 3.2.0
 info:
-  title: Albato Automations Templates API
-  description: REST API for managing automation workflows in the Albato no-code iPaaS platform. Supports creating, reading, updating, enabling, disabling, and monitoring multi-step automation workflows that connect 1,000+ apps.
+  title: Albato Embedded Templates API
+  description: REST API for Albato Embedded iPaaS, enabling SaaS companies to integrate Albato's automation capabilities into their products. Manage teams, users, connectors, and white-label automation flows for end customers.
   version: 1.0.0
   contact:
     name: Albato Support
-    url: https://albato.com
+    url: https://albato.com/embedded
 servers:
-- url: https://albato.com/api/v1
-  description: Albato API
+- url: https://albato.com/api/v1/embedded
+  description: Albato Embedded API
 security:
 - ApiKeyAuth: []
 tags:
@@ -56,6 +56,16 @@ paths:
                 $ref: '#/components/schemas/Template'
 components:
   schemas:
+    Template:
+      allOf:
+      - $ref: '#/components/schemas/TemplateRequest'
+      - type: object
+        properties:
+          id:
+            type: string
+          created_at:
+            type: string
+            format: date-time
     TemplateRequest:
       type: object
       required:
@@ -71,16 +81,6 @@ components:
           type: array
           items:
             type: object
-    Template:
-      allOf:
-      - $ref: '#/components/schemas/TemplateRequest'
-      - type: object
-        properties:
-          id:
-            type: string
-          created_at:
-            type: string
-            format: date-time
     TemplateList:
       type: object
       properties:
@@ -95,4 +95,3 @@ components:
       type: apiKey
       in: header
       name: Authorization
-      description: Albato account API key

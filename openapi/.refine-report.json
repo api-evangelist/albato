@@ -1,17 +1,13 @@
 {
   "provider": "albato",
   "sources": [
-    "albato-automations-api-openapi.yml",
-    "albato-connectors-api-openapi.yml",
-    "albato-executions-api-openapi.yml",
-    "albato-teams-api-openapi.yml",
-    "albato-templates-api-openapi.yml",
-    "albato-users-api-openapi.yml"
+    "_original/albato-automations-openapi.yaml",
+    "_original/albato-embedded-openapi.yaml"
   ],
   "outputs": [
     "albato-automations-api-openapi.yml",
-    "albato-connectors-api-openapi.yml",
     "albato-executions-api-openapi.yml",
+    "albato-connectors-api-openapi.yml",
     "albato-teams-api-openapi.yml",
     "albato-templates-api-openapi.yml",
     "albato-users-api-openapi.yml"
@@ -20,7 +16,17 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "albato-automations-openapi.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "albato-embedded-openapi.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "albato-automations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "albato-connectors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "albato-executions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "albato-teams-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "albato-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "albato-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
