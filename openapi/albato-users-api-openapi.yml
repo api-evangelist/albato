@@ -63,6 +63,21 @@ paths:
                 $ref: '#/components/schemas/User'
 components:
   schemas:
+    UserRequest:
+      type: object
+      required:
+      - email
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        role:
+          type: string
+          enum:
+          - admin
+          - member
     User:
       allOf:
       - $ref: '#/components/schemas/UserRequest'
@@ -84,21 +99,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/User'
-    UserRequest:
-      type: object
-      required:
-      - email
-      properties:
-        email:
-          type: string
-          format: email
-        name:
-          type: string
-        role:
-          type: string
-          enum:
-          - admin
-          - member
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

@@ -42,15 +42,6 @@ paths:
                 $ref: '#/components/schemas/ConnectorList'
 components:
   schemas:
-    ConnectorList:
-      type: object
-      properties:
-        total:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Connector'
     Connector:
       type: object
       properties:
@@ -69,6 +60,15 @@ components:
         icon_url:
           type: string
           format: uri
+    ConnectorList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Connector'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

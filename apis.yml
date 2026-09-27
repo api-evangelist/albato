@@ -3,7 +3,7 @@ url: https://raw.githubusercontent.com/api-evangelist/albato/refs/heads/main/api
 name: Albato
 tags:
 - No-Code Automation
-- Workflow-Automation
+- Workflow Automation
 - Embedded iPaaS
 - App Integration
 - Integration
@@ -17,6 +17,7 @@ tags_raw:
 - Integrations
 - Webhooks
 - White-Label
+- Workflow-Automation
 type: Index
 deliveryModel:
   model: saas

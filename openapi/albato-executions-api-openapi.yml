@@ -51,15 +51,6 @@ paths:
                 $ref: '#/components/schemas/ExecutionList'
 components:
   schemas:
-    ExecutionList:
-      type: object
-      properties:
-        total:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Execution'
     Execution:
       type: object
       properties:
@@ -83,6 +74,15 @@ components:
           type: string
         steps_completed:
           type: integer
+    ExecutionList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Execution'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

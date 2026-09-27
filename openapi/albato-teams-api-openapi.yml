@@ -124,6 +124,15 @@ paths:
           description: Deleted
 components:
   schemas:
+    TeamList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Team'
     TeamRequest:
       type: object
       required:
@@ -138,15 +147,6 @@ components:
         plan:
           type: string
           description: Plan identifier for this team
-    TeamList:
-      type: object
-      properties:
-        total:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Team'
     Team:
       allOf:
       - $ref: '#/components/schemas/TeamRequest'
