@@ -178,35 +178,20 @@ paths:
                 $ref: '#/components/schemas/Automation'
 components:
   schemas:
-    AutomationList:
+    AutomationRequest:
       type: object
+      required:
+      - name
+      - steps
       properties:
-        total:
-          type: integer
-        items:
+        name:
+          type: string
+        description:
+          type: string
+        steps:
           type: array
           items:
-            $ref: '#/components/schemas/Automation'
-    AutomationStep:
-      type: object
-      properties:
-        app:
-          type: string
-          description: App identifier
-        type:
-          type: string
-          enum:
-          - trigger
-          - action
-          - condition
-          - delay
-          description: Step type
-        event:
-          type: string
-          description: Trigger or action event name
-        config:
-          type: object
-          additionalProperties: true
+            $ref: '#/components/schemas/AutomationStep'
     Automation:
       allOf:
       - $ref: '#/components/schemas/AutomationRequest'
@@ -231,20 +216,35 @@ components:
           updated_at:
             type: string
             format: date-time
-    AutomationRequest:
+    AutomationStep:
       type: object
-      required:
-      - name
-      - steps
       properties:
-        name:
+        app:
           type: string
-        description:
+          description: App identifier
+        type:
           type: string
-        steps:
+          enum:
+          - trigger
+          - action
+          - condition
+          - delay
+          description: Step type
+        event:
+          type: string
+          description: Trigger or action event name
+        config:
+          type: object
+          additionalProperties: true
+    AutomationList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
           type: array
           items:
-            $ref: '#/components/schemas/AutomationStep'
+            $ref: '#/components/schemas/Automation'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
