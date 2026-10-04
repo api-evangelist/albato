@@ -124,20 +124,15 @@ paths:
           description: Deleted
 components:
   schemas:
-    Team:
-      allOf:
-      - $ref: '#/components/schemas/TeamRequest'
-      - type: object
-        properties:
-          id:
-            type: string
-          active_automations:
-            type: integer
-          transaction_count:
-            type: integer
-          created_at:
-            type: string
-            format: date-time
+    TeamList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Team'
     TeamRequest:
       type: object
       required:
@@ -152,15 +147,20 @@ components:
         plan:
           type: string
           description: Plan identifier for this team
-    TeamList:
-      type: object
-      properties:
-        total:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Team'
+    Team:
+      allOf:
+      - $ref: '#/components/schemas/TeamRequest'
+      - type: object
+        properties:
+          id:
+            type: string
+          active_automations:
+            type: integer
+          transaction_count:
+            type: integer
+          created_at:
+            type: string
+            format: date-time
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

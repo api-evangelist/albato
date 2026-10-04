@@ -56,16 +56,6 @@ paths:
                 $ref: '#/components/schemas/Template'
 components:
   schemas:
-    Template:
-      allOf:
-      - $ref: '#/components/schemas/TemplateRequest'
-      - type: object
-        properties:
-          id:
-            type: string
-          created_at:
-            type: string
-            format: date-time
     TemplateRequest:
       type: object
       required:
@@ -81,6 +71,16 @@ components:
           type: array
           items:
             type: object
+    Template:
+      allOf:
+      - $ref: '#/components/schemas/TemplateRequest'
+      - type: object
+        properties:
+          id:
+            type: string
+          created_at:
+            type: string
+            format: date-time
     TemplateList:
       type: object
       properties:

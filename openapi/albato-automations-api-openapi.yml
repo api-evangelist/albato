@@ -178,20 +178,15 @@ paths:
                 $ref: '#/components/schemas/Automation'
 components:
   schemas:
-    AutomationRequest:
+    AutomationList:
       type: object
-      required:
-      - name
-      - steps
       properties:
-        name:
-          type: string
-        description:
-          type: string
-        steps:
+        total:
+          type: integer
+        items:
           type: array
           items:
-            $ref: '#/components/schemas/AutomationStep'
+            $ref: '#/components/schemas/Automation'
     Automation:
       allOf:
       - $ref: '#/components/schemas/AutomationRequest'
@@ -236,15 +231,20 @@ components:
         config:
           type: object
           additionalProperties: true
-    AutomationList:
+    AutomationRequest:
       type: object
+      required:
+      - name
+      - steps
       properties:
-        total:
-          type: integer
-        items:
+        name:
+          type: string
+        description:
+          type: string
+        steps:
           type: array
           items:
-            $ref: '#/components/schemas/Automation'
+            $ref: '#/components/schemas/AutomationStep'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
