@@ -56,6 +56,25 @@ paths:
                 $ref: '#/components/schemas/Template'
 components:
   schemas:
+    TemplateList:
+      type: object
+      properties:
+        total:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Template'
+    Template:
+      allOf:
+      - $ref: '#/components/schemas/TemplateRequest'
+      - type: object
+        properties:
+          id:
+            type: string
+          created_at:
+            type: string
+            format: date-time
     TemplateRequest:
       type: object
       required:
@@ -71,25 +90,6 @@ components:
           type: array
           items:
             type: object
-    Template:
-      allOf:
-      - $ref: '#/components/schemas/TemplateRequest'
-      - type: object
-        properties:
-          id:
-            type: string
-          created_at:
-            type: string
-            format: date-time
-    TemplateList:
-      type: object
-      properties:
-        total:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Template'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

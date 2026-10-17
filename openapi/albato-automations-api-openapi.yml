@@ -178,6 +178,26 @@ paths:
                 $ref: '#/components/schemas/Automation'
 components:
   schemas:
+    AutomationStep:
+      type: object
+      properties:
+        app:
+          type: string
+          description: App identifier
+        type:
+          type: string
+          enum:
+          - trigger
+          - action
+          - condition
+          - delay
+          description: Step type
+        event:
+          type: string
+          description: Trigger or action event name
+        config:
+          type: object
+          additionalProperties: true
     AutomationList:
       type: object
       properties:
@@ -187,6 +207,20 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Automation'
+    AutomationRequest:
+      type: object
+      required:
+      - name
+      - steps
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/AutomationStep'
     Automation:
       allOf:
       - $ref: '#/components/schemas/AutomationRequest'
@@ -211,40 +245,6 @@ components:
           updated_at:
             type: string
             format: date-time
-    AutomationStep:
-      type: object
-      properties:
-        app:
-          type: string
-          description: App identifier
-        type:
-          type: string
-          enum:
-          - trigger
-          - action
-          - condition
-          - delay
-          description: Step type
-        event:
-          type: string
-          description: Trigger or action event name
-        config:
-          type: object
-          additionalProperties: true
-    AutomationRequest:
-      type: object
-      required:
-      - name
-      - steps
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        steps:
-          type: array
-          items:
-            $ref: '#/components/schemas/AutomationStep'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
