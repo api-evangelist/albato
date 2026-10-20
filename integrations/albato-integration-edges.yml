@@ -1,3 +1,19 @@
+generated: '2026-10-20'
+method: searched
+source:
+- zoom/integrations/zoom-integration-edges.yml
+- https://zapier.com/apps/albato/integrations
+- https://n8n.io/integrations/albato/
+- https://composio.dev/toolkits/albato
+- https://monid.ai/tools/albato
+checked:
+- zoom/integrations/zoom-integration-edges.yml
+- https://composio.dev/toolkits/albato
+- https://monid.ai/tools/albato
+- https://n8n.io/integrations/albato/
+- https://zapier.com/apps/albato/integrations
+summary: null
+marketplace_apps: []
 edges:
 - partner_name: Zoom (own)
   partner: zoom
@@ -16,9 +32,4 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Zoom app
-generated: '2026-10-18'
-method: searched
-source:
-- zoom/integrations/zoom-integration-edges.yml
-checked:
-- zoom/integrations/zoom-integration-edges.yml
+templates: []
