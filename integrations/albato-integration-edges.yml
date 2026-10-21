@@ -12,6 +12,7 @@ checked:
 - https://monid.ai/tools/albato
 - https://n8n.io/integrations/albato/
 - https://zapier.com/apps/albato/integrations
+- hubspot/integrations/hubspot-integration-edges.yml
 summary: null
 marketplace_apps: []
 edges:
@@ -32,4 +33,21 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Zoom app
+- partner_name: HubSpot (own)
+  partner: hubspot
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://ecosystem.hubspot.com/marketplace/listing/albato-by-albato-353892
+  mirror_of: hubspot/integrations/hubspot-integration-edges.yml
+  apps:
+  - Albato
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: WORKFLOW_AUTOMATION
 templates: []
