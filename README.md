@@ -1,4 +1,4 @@
-# Albato (albato)
+# Albato
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,168 +66,203 @@
 
 Albato is a no-code automation platform and embedded iPaaS that enables businesses to automate workflows by connecting 1,000+ apps without writing code. Supports multi-step automations with triggers, actions, conditions, and delays. Albato Embedded allows SaaS companies to offer white-label native integrations to their customers.
 
-**URL:** [https://albato.com](https://albato.com)
+**Areas:** No-Code Automation · Workflow Automation · Embedded iPaaS · App Integration · Integration · Webhook · White Label
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Albato on APIs.io
 
-## Tags:
+Everything profiled for Albato is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/albato/](https://apis.io/providers/albato/)** — or go straight to one of the APIs or properties below.
 
- - No-Code Automation, Workflow Automation, Embedded iPaaS, App Integration, Integrations, Webhooks, White-Label
+### APIs (6)
 
-## Timestamps
+- [Albato Automations API](https://apis.io/apis/albato/albato-automations-api/) — Manage automation workflows
+- [Albato Connectors API](https://apis.io/apis/albato/albato-connectors-api/) — Manage app connectors
+- [Albato Executions API](https://apis.io/apis/albato/albato-executions-api/) — Monitor automation execution history
+- [Albato Teams API](https://apis.io/apis/albato/albato-teams-api/) — Manage embedded teams (customer accounts)
+- [Albato Templates API](https://apis.io/apis/albato/albato-templates-api/) — Manage automation templates
+- [Albato Users API](https://apis.io/apis/albato/albato-users-api/) — Manage team users
 
-- **Created:** 2025-06-06
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Albato Automations API
-REST API for managing multi-step automation workflows in Albato. Supports creating, enabling, disabling, and monitoring automation executions across 1,000+ connected apps.
+#### MCP servers (1)
 
-**Human URL:** [https://albato.com](https://albato.com)
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags:
+- [albato](https://apis.io/servers/albato/albato/)
 
- - Automation, Workflow, No-Code, Executions
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://albato.com)
-- [OpenAPI](openapi/albato-automations-openapi.yaml)
-- [JSONSchema](json-schema/albato-albato-automations-automation-schema.json)
-- [JSONSchema](json-schema/albato-albato-automations-automation-step-schema.json)
-- [JSONSchema](json-schema/albato-albato-automations-execution-schema.json)
+- [Albato Agentic Access](https://apis.io/agentic-access/albato/albato-agentic-access/)
 
-### Albato Embedded API
-REST API for Albato Embedded iPaaS enabling SaaS companies to manage customer teams, app connectors, and automation templates for white-label integration delivery.
+#### JSON Schema (7)
 
-**Human URL:** [https://albato.com/embedded](https://albato.com/embedded)
+The data models the API reads and writes.
 
-#### Tags:
+- [Automation](https://apis.io/schemas/albato/albato-albato-automations-automation/)
+- [AutomationStep](https://apis.io/schemas/albato/albato-albato-automations-automation-step/)
+- [Execution](https://apis.io/schemas/albato/albato-albato-automations-execution/)
+- [Connector](https://apis.io/schemas/albato/albato-albato-embedded-connector/)
+- [Team](https://apis.io/schemas/albato/albato-albato-embedded-team/)
+- [Template](https://apis.io/schemas/albato/albato-albato-embedded-template/)
+- [User](https://apis.io/schemas/albato/albato-albato-embedded-user/)
 
- - Embedded iPaaS, White-Label, Teams, Connectors, Templates
+#### JSON Structure (7)
 
-#### Properties
+Data models expressed in JSON Structure.
 
-- [Documentation](https://albato.com/embedded)
-- [OpenAPI](openapi/albato-embedded-openapi.yaml)
-- [JSONSchema](json-schema/albato-albato-embedded-team-schema.json)
-- [JSONSchema](json-schema/albato-albato-embedded-user-schema.json)
-- [JSONSchema](json-schema/albato-albato-embedded-connector-schema.json)
-- [JSONSchema](json-schema/albato-albato-embedded-template-schema.json)
+- [Albato Albato Automations Automation Step Structure](https://apis.io/json-structure/albato/albato-albato-automations-automation-step-structure/)
+- [Albato Albato Automations Automation Structure](https://apis.io/json-structure/albato/albato-albato-automations-automation-structure/)
+- [Albato Albato Automations Execution Structure](https://apis.io/json-structure/albato/albato-albato-automations-execution-structure/)
+- [Albato Albato Embedded Connector Structure](https://apis.io/json-structure/albato/albato-albato-embedded-connector-structure/)
+- [Albato Albato Embedded Team Structure](https://apis.io/json-structure/albato/albato-albato-embedded-team-structure/)
+- [Albato Albato Embedded Template Structure](https://apis.io/json-structure/albato/albato-albato-embedded-template-structure/)
+- [Albato Albato Embedded User Structure](https://apis.io/json-structure/albato/albato-albato-embedded-user-structure/)
 
-## Common Properties
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Albato Albato Context](https://apis.io/jsonld/albato/albato-albato-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Albato Vocabulary](https://apis.io/vocabularies/albato/albato-vocabulary/)
+
+#### Examples (7)
+
+Example requests and responses.
+
+- [Albato Albato Automations Automation Example](https://apis.io/examples/albato/albato-albato-automations-automation-example/)
+- [Albato Albato Automations Automation Step Example](https://apis.io/examples/albato/albato-albato-automations-automation-step-example/)
+- [Albato Albato Automations Execution Example](https://apis.io/examples/albato/albato-albato-automations-execution-example/)
+- [Albato Albato Embedded Connector Example](https://apis.io/examples/albato/albato-albato-embedded-connector-example/)
+- [Albato Albato Embedded Team Example](https://apis.io/examples/albato/albato-albato-embedded-team-example/)
+- [Albato Albato Embedded Template Example](https://apis.io/examples/albato/albato-albato-embedded-template-example/)
+- [Albato Albato Embedded User Example](https://apis.io/examples/albato/albato-albato-embedded-user-example/)
+
+#### Collections (12)
+
+Postman and Open Collection request collections.
+
+- [Albato Automations API](https://apis.io/collections/albato/open-albato-automations-api/)
+- [Albato Automations Connectors API](https://apis.io/collections/albato/open-albato-connectors-api/)
+- [Albato Automations Executions API](https://apis.io/collections/albato/open-albato-executions-api/)
+- [Albato Automations Teams API](https://apis.io/collections/albato/open-albato-teams-api/)
+- [Albato Automations Templates API](https://apis.io/collections/albato/open-albato-templates-api/)
+- [Albato Automations Users API](https://apis.io/collections/albato/open-albato-users-api/)
+- [Albato Automations API](https://apis.io/collections/albato/postman-albato-automations-api/)
+- [Albato Automations Connectors API](https://apis.io/collections/albato/postman-albato-connectors-api/)
+- [Albato Automations Executions API](https://apis.io/collections/albato/postman-albato-executions-api/)
+- [Albato Automations Teams API](https://apis.io/collections/albato/postman-albato-teams-api/)
+- [Albato Automations Templates API](https://apis.io/collections/albato/postman-albato-templates-api/)
+- [Albato Automations Users API](https://apis.io/collections/albato/postman-albato-users-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Albato Automations Overlay](https://apis.io/overlays/albato/albato-automations-overlay/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Albato — jsonschema rules](https://apis.io/rules/albato/albato-jsonschema-spectral-rules/)
+- [Albato API Rules](https://apis.io/rules/albato/albato-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Albato Authentication](https://apis.io/security/albato/albato-authentication/)
+- [Albato Domain Security](https://apis.io/security/albato/albato-domain-security/)
+- [Albato Trust Center](https://apis.io/security/albato/albato-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Albato Plans Pricing](https://apis.io/plans/albato/albato-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Albato Rate Limits](https://apis.io/rate-limits/albato/albato-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Albato Finops](https://apis.io/finops/albato/albato-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://albato.com)
 - [Documentation](https://wiki.albato.com/en)
-- [GettingStarted - Albato Embedded iPaaS](https://albato.com/embedded)
+- [Getting started](https://albato.com/embedded)
 - [Pricing](https://albato.com/pricing)
-- [Integrations - 1,000+ App Integrations](https://albato.com/apps/all-integrations)
+- [Blog](https://albato.com/blog/all)
+- [Privacy policy](https://albato.com/privacy)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| No-Code Automation Builder | Visual automation builder for creating multi-step workflows connecting 1,000+ apps without writing code, with conditions, delays, and data transformations. |
-| 1,000+ App Integrations | Pre-built connectors for CRM, marketing, e-commerce, communication, and productivity apps including HubSpot, Salesforce, Google Workspace, Slack, Shopify, and more. |
-| Albato Embedded iPaaS | White-label integration platform for SaaS companies to embed Albato's automation capabilities natively in their products with full branding control. |
-| Multi-Step Workflows | Support for complex automations with sequential and conditional steps, delays, loops, and data transformations without coding. |
-| Real-Time and Scheduled Triggers | Webhook-based real-time triggers for instant event processing and scheduled polling triggers for API-based app integrations. |
-| Custom App Integrator | Build custom API connectors from any REST API using the App Integrator without development handoff, supporting all major auth methods. |
-| Execution Monitoring | Detailed execution history with step-level logging, success/error rates, real-time notifications, and dashboard insights. |
-| Data Transformation | Built-in data mapping, field transformation, and JavaScript code steps for processing data between connected apps. |
+**Kin Score 47.8** — developing · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 66.1 |
+| Contract governance | 31.8 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 36.9 |
+| Access clarity | 36.8 |
 
-| Name | Description |
-|------|-------------|
-| CRM and Marketing Automation | Sync leads between CRM and marketing tools, automate email campaigns, and route prospects based on behavioral conditions. |
-| E-Commerce Order Processing | Automate order notifications, inventory updates, fulfillment triggers, and customer communication across e-commerce platforms. |
-| SaaS Native Integration Delivery | Use Albato Embedded to offer customers white-labeled integrations in your SaaS product without in-house iPaaS development. |
-| Customer Support Automation | Route tickets, trigger alerts, and sync customer data between helpdesk, CRM, and communication platforms automatically. |
-| Data Synchronization | Keep data consistent across business systems with bidirectional syncs, scheduled automations, and event-driven updates. |
+**Agent readiness 22.5** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| HubSpot | CRM and marketing automation for contact and deal management. |
-| Salesforce | Enterprise CRM for sales pipeline and opportunity workflows. |
-| Google Workspace | Google Sheets, Gmail, Drive, Calendar, and Forms integrations. |
-| Slack | Team messaging integration for workflow notifications and alerts. |
-| Shopify | E-commerce integration for order, product, and customer automation. |
-| Stripe | Payment processing integration for subscription and payment workflows. |
-| Notion | Workspace integration for task and project data synchronization. |
-| Airtable | Database integration for spreadsheet and grid data workflows. |
+**Regulatory alignment 25.5** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/albato/](https://apis.io/providers/albato/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Albato Automations API](openapi/albato-automations-openapi.yaml)
-- [Albato Embedded API](openapi/albato-embedded-openapi.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Albato: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [albato-albato-automations-automation-schema.json](json-schema/albato-albato-automations-automation-schema.json)
-- [albato-albato-automations-automation-step-schema.json](json-schema/albato-albato-automations-automation-step-schema.json)
-- [albato-albato-automations-execution-schema.json](json-schema/albato-albato-automations-execution-schema.json)
-- [albato-albato-embedded-team-schema.json](json-schema/albato-albato-embedded-team-schema.json)
-- [albato-albato-embedded-user-schema.json](json-schema/albato-albato-embedded-user-schema.json)
-- [albato-albato-embedded-connector-schema.json](json-schema/albato-albato-embedded-connector-schema.json)
-- [albato-albato-embedded-template-schema.json](json-schema/albato-albato-embedded-template-schema.json)
-
-### JSON Structure
-
-- [albato-albato-automations-automation-structure.json](json-structure/albato-albato-automations-automation-structure.json)
-- [albato-albato-automations-automation-step-structure.json](json-structure/albato-albato-automations-automation-step-structure.json)
-- [albato-albato-automations-execution-structure.json](json-structure/albato-albato-automations-execution-structure.json)
-- [albato-albato-embedded-team-structure.json](json-structure/albato-albato-embedded-team-structure.json)
-- [albato-albato-embedded-user-structure.json](json-structure/albato-albato-embedded-user-structure.json)
-- [albato-albato-embedded-connector-structure.json](json-structure/albato-albato-embedded-connector-structure.json)
-- [albato-albato-embedded-template-structure.json](json-structure/albato-albato-embedded-template-structure.json)
-
-### JSON-LD
-
-- [albato-albato-context.jsonld](json-ld/albato-albato-context.jsonld)
-
-### Examples
-
-- [albato-albato-automations-automation-example.json](examples/albato-albato-automations-automation-example.json)
-- [albato-albato-automations-automation-step-example.json](examples/albato-albato-automations-automation-step-example.json)
-- [albato-albato-automations-execution-example.json](examples/albato-albato-automations-execution-example.json)
-- [albato-albato-embedded-team-example.json](examples/albato-albato-embedded-team-example.json)
-- [albato-albato-embedded-user-example.json](examples/albato-albato-embedded-user-example.json)
-- [albato-albato-embedded-connector-example.json](examples/albato-albato-embedded-connector-example.json)
-- [albato-albato-embedded-template-example.json](examples/albato-albato-embedded-template-example.json)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Albato Automations API](capabilities/shared/automations-api.yaml) — 6 operations for automation management
-- [Albato Embedded API](capabilities/shared/embedded-api.yaml) — 5 operations for embedded team and connector management
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [iPaaS Automation](capabilities/ipaas-automation.yaml) | albato-automations, albato-embedded | 6 | Automation Builder, SaaS Developer, Operations Manager |
-
-## Vocabulary
-
-- [Albato Vocabulary](vocabulary/albato-vocabulary.yaml) — Unified taxonomy mapping 6 resources, 7 actions, 1 workflow, and 3 personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [Albato Spectral Rules](rules/albato-spectral-rules.yml) — 25 rules across 8 categories enforcing Albato API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/albato/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
