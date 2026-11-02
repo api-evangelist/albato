@@ -1,0 +1,133 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://albato.com/pricing
+sources:
+- https://albato.com/pricing
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+  managed_tier: Pro
+published: true
+note: Self-serve pricing page with transaction slider (1K–2M); monthly and annual (save up to 30%) prices
+  shown. Additional transactions priced 50% higher than included ones.
+plan_count: 6
+currency: USD
+plans:
+- name: Free
+  price_text: $0
+  price: 0
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: 100 transactions, 5 active automations, 2 steps per automation, 7-day log storage, 15-min
+    automation update
+- name: Pro
+  price_text: $22 /mo
+  price: 22
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: 1K transactions; unlimited automations & steps; 30-day log storage; 5-min automation
+    update
+  overage: Extra transaction cost $0.0330
+- name: Pro (annual billing)
+  price_text: $15 /mo
+  price: 15
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: 1K transactions
+  overage: Extra transaction cost $0.0330
+- name: Teams
+  price_text: $93 /mo
+  price: 93
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: from 5K transactions, 5 team seats, priority support, 3-min automation update
+  overage: 'Buy extra transactions: Auto'
+- name: Teams (annual billing)
+  price_text: $65 /mo
+  price: 65
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: from 5K transactions, 5 team seats
+- name: Custom
+  price_text: Contact us
+  period: none
+  included_quota: Flexible transaction limits, dedicated CSM, 60-day log storage, 1-min automation update
+  overage: Contact us
+rate_limit_statements:
+- Transactions 100
+- Transactions Up to 2M
+- Automation update time 15 min
+- 5 min
+- 3 min
+- 1 min
+- Albato AI tokens price for 1 trx 2,000
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - free
+  - hybrid
+  - metered
+  - subscription
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Pro
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Pro (annual billing)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Teams
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Teams (annual billing)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Custom
+    access: other
+    model: metered
+    model_how: derived
+    units: []
+    periods:
+    - none
